@@ -1,0 +1,1557 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sbidu - Bid And Auction HTML Template</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/font/flaticon.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="shortcut icon" href="assets/img/favicon-logo.png" type="image/x-icon">
+
+    <script src="https://kit.fontawesome.com/5f8f97e3fd.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <section id="loader">
+        <div class="img-loader">
+        </div>
+    </section>
+
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="content d-flex justify-content-between align-items-center">
+                    <ul class="d-flex">
+                        <li>
+                            <a href="#" class="mr-3">
+                                <i class="fas fa-phone-alt"></i>
+                                <span>Customer Support</span>
+                            </a>
+                        </li>
+                        <li>
+                            <i class="fas fa-globe"></i>
+                            <select name="language" class="select-bar">
+                                <option value="en">En</option>
+                                <option value="az">Az</option>
+                                <option value="ru">Ru</option>
+                            </select>
+                        </li>
+                    </ul>
+                    <div class="my-account d-flex align-items-center">
+                        <a href="sing-in.html" class="login">Login</a>
+                        <a href="my-account-bids.html" class="user">
+                            <i class="flaticon-user"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar -->
+        <div class="header-bottom">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container">
+                    <div class="logo">
+                        <a class="navbar-brand" href="index.html">
+                            <img src="assets/img/logo.png" alt="logo">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <i class="fas fa-bars navbar-toggler-icon"></i>
+                        </button>
+                    </div>
+
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="auction.html">Auction</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="about-us.html">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="contact.html">Contact</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="search-nav">
+                        <span class="icon">
+                            <i class="fas fa-search"></i>
+                        </span>
+                        <form class="search-form my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search for brand, model...."
+                                aria-label="Search">
+                            <button class="btn-search my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!-- End Navbar -->
+    </header>
+
+    <main>
+        <!-- Bannar -->
+        <section id="banner" style="background-image: url(assets/img/banner-bg-1.png);">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-12">
+                        <div class="banner-content">
+                            <h5>Next Generation Auction</h5>
+                            <h1>
+                                Find Your
+                                <span>Next Deal!</span>
+                            </h1>
+                            <p>Online Auction is where everyone goes to shop, sell and give, while discovering variety
+                                and affordability.</p>
+                            <a href="#">GET STARTED</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <img src="assets/img/banner-1.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="banner-bottom-image d-none d-lg-block">
+                <img src="assets/img/banner-shape.png" alt="" class="img-fluid">
+            </div>
+        </section>
+        <!-- End Banner -->
+
+        <!-- Catagory Slider -->
+        <section id="catagory-slider">
+            <div class="container">
+                <div class="row">
+                    <div class="title">
+                        <h5>Browse the highlights</h5>
+                    </div>
+                    <div class="col-lg-12 slider">
+                        <div class="owl-carousel owl-theme ">
+                            <div class="item">
+                                <a href="#">
+                                    <img src="assets/img/catagory01.png" alt="">
+                                    <span>Vehicles</span>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="#">
+                                    <img src="assets/img/catagory02.png" alt="">
+                                    <span>Jewelry</span>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="#">
+                                    <img src="assets/img/catagory03.png" alt="">
+                                    <span>Watches</span>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="#">
+                                    <img src="assets/img/catagory04.png" alt="">
+                                    <span>Electronics</span>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="#">
+                                    <img src="assets/img/catagory05.png" alt="">
+                                    <span>Sports</span>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="#">
+                                    <img src="assets/img/catagory06.png" alt="">
+                                    <span>Real Estate</span>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="#">
+                                    <img src="assets/img/catagory07.png" alt="">
+                                    <span>Arts</span>
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="#">
+                                    <img src="assets/img/catagory08.png" alt="">
+                                    <span>Coins</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Catagory Slider -->
+        <!-- Car Auction -->
+        <section id="car-auction">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 header d-flex justify-content-between">
+                        <div class="title d-flex">
+                            <img src="assets/img/catagory01.png" alt="">
+                            <div class="text">
+                                <h1>Vehicles</h1>
+                                <p>We offer affordable Vehicles</p>
+                            </div>
+                        </div>
+                        <div class="header-button">
+                            <a href="#" class="view-all btn rounded-pill">View All</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-6 col-sm-10">
+                        <div class="auction-item">
+                            <div class="image">
+                                <a href="auction-details.html">
+                                    <img src="assets/img/auction-1.jpg" alt="">
+                                </a>
+                                <a href="#" class="star">
+                                    <i class="far fa-star"></i>
+                                </a>
+                                <a href="#" class="hammer">
+                                    <i class="flaticon-hammer"></i>
+                                </a>
+                            </div>
+                            <div class="auction-content">
+                                <h5>2018 Hyundai Sonata</h5>
+                                <div class="bid d-flex justify-content-between">
+                                    <div class="current-bid d-flex">
+                                        <i class="flaticon-hammer"></i>
+                                        <p class="d-flex flex-column">Current Bid
+                                            <span>$876.00</span>
+                                        </p>
+                                    </div>
+                                    <div class="buy-now-price d-flex">
+                                        <i class="flaticon-money"></i>
+                                        <p class="d-flex flex-column">Buy Now
+                                            <span>$5000.00</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="time d-flex ">
+                                <div class="countdown" data-countdown="10/31/2020 20:00"></div>
+                                <span>30 Bids</span>
+                            </div>
+                            <div class="button text-center">
+                                <a href="auction-details.html">Submit A Bid</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-10">
+                        <div class="auction-item">
+                            <div class="image">
+                                <a href="auction-details.html">
+                                    <img src="assets/img/auction-2.jpg" alt="">
+                                </a>
+                                <a href="#" class="star">
+                                    <i class="far fa-star"></i>
+                                </a>
+                                <a href="#" class="hammer">
+                                    <i class="flaticon-hammer"></i>
+                                </a>
+                            </div>
+                            <div class="auction-content">
+                                <h5>2018 Nissan Versa, S</h5>
+                                <div class="bid d-flex justify-content-between">
+                                    <div class="current-bid d-flex">
+                                        <i class="flaticon-hammer"></i>
+                                        <p class="d-flex flex-column">Current Bid
+                                            <span>$876.00</span>
+                                        </p>
+                                    </div>
+                                    <div class="buy-now-price d-flex">
+                                        <i class="flaticon-money"></i>
+                                        <p class="d-flex flex-column">Buy Now
+                                            <span>$5000.00</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="time d-flex ">
+                                <div class="countdown" data-countdown="10/31/2020 20:00"></div>
+                                <span>30 Bids</span>
+                            </div>
+                            <div class="button text-center">
+                                <a href="auction-details.html">Submit A Bid</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-10">
+                        <div class="auction-item">
+                            <div class="image">
+                                <a href="auction-details.html">
+                                    <img src="assets/img/auction-3.jpg" alt="">
+                                </a>
+                                <a href="#" class="star">
+                                    <i class="far fa-star"></i>
+                                </a>
+                                <a href="#" class="hammer">
+                                    <i class="flaticon-hammer"></i>
+                                </a>
+                            </div>
+                            <div class="auction-content">
+                                <h5>2018 Honda Accord, Sport</h5>
+                                <div class="bid d-flex justify-content-between">
+                                    <div class="current-bid d-flex">
+                                        <i class="flaticon-hammer"></i>
+                                        <p class="d-flex flex-column">Current Bid
+                                            <span>$876.00</span>
+                                        </p>
+                                    </div>
+                                    <div class="buy-now-price d-flex">
+                                        <i class="flaticon-money"></i>
+                                        <p class="d-flex flex-column">Buy Now
+                                            <span>$5000.00</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="time d-flex ">
+                                <div class="countdown" data-countdown="10/31/2020 20:00"></div>
+                                <span>30 Bids</span>
+                            </div>
+                            <div class="button text-center">
+                                <a href="auction-details.html">Submit A Bid</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="car-bg">
+                <img src="assets/img/car-bg.png" alt="">
+            </div>
+        </section>
+        <!-- End Car Auction -->
+        <!-- Car Auction -->
+        <section id="jewelry-auction">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 header d-flex justify-content-between">
+                        <div class="title d-flex">
+                            <img src="assets/img/catagory02.png" alt="">
+                            <div class="text">
+                                <h1>Jewelry</h1>
+                                <p>Online jewelry auctions where you can bid now and save money</p>
+                            </div>
+                        </div>
+                        <div class="header-button">
+                            <a href="#" class="view-all btn rounded-pill">View All</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-6 col-sm-10">
+                        <div class="auction-item">
+                            <div class="image">
+                                <a href="auction-details.html">
+                                    <img src="assets/img/jewelry-auction-1.jpg" alt="">
+                                </a>
+                                <a href="#" class="star">
+                                    <i class="far fa-star"></i>
+                                </a>
+                                <a href="#" class="hammer">
+                                    <i class="flaticon-hammer"></i>
+                                </a>
+                            </div>
+                            <div class="auction-content">
+                                <h5>Gold Ring With Clear Stones</h5>
+                                <div class="bid d-flex justify-content-between">
+                                    <div class="current-bid d-flex">
+                                        <i class="flaticon-hammer"></i>
+                                        <p class="d-flex flex-column">Current Bid
+                                            <span>$876.00</span>
+                                        </p>
+                                    </div>
+                                    <div class="buy-now-price d-flex">
+                                        <i class="flaticon-money"></i>
+                                        <p class="d-flex flex-column">Buy Now
+                                            <span>$5000.00</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="time d-flex ">
+                                <div class="countdown" data-countdown="10/31/2020 20:00"></div>
+                                <span>30 Bids</span>
+                            </div>
+                            <div class="button text-center">
+                                <a href="auction-details.html">Submit A Bid</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-10">
+                        <div class="auction-item">
+                            <div class="image">
+                                <a href="auction-details.html">
+                                    <img src="assets/img/jewelry-auction-2.jpg" alt="">
+                                </a>
+                                <a href="#" class="star">
+                                    <i class="far fa-star"></i>
+                                </a>
+                                <a href="#" class="hammer">
+                                    <i class="flaticon-hammer"></i>
+                                </a>
+                            </div>
+                            <div class="auction-content">
+                                <h5>Ring With Clear Stone Accents</h5>
+                                <div class="bid d-flex justify-content-between">
+                                    <div class="current-bid d-flex">
+                                        <i class="flaticon-hammer"></i>
+                                        <p class="d-flex flex-column">Current Bid
+                                            <span>$876.00</span>
+                                        </p>
+                                    </div>
+                                    <div class="buy-now-price d-flex">
+                                        <i class="flaticon-money"></i>
+                                        <p class="d-flex flex-column">Buy Now
+                                            <span>$5000.00</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="time d-flex ">
+                                <div class="countdown" data-countdown="10/31/2020 20:00"></div>
+                                <span>30 Bids</span>
+                            </div>
+                            <div class="button text-center">
+                                <a href="auction-details.html">Submit A Bid</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-10">
+                        <div class="auction-item">
+                            <div class="image">
+                                <a href="auction-details.html">
+                                    <img src="assets/img/jewelry-auction-3.jpg" alt="">
+                                </a>
+                                <a href="#" class="star">
+                                    <i class="far fa-star"></i>
+                                </a>
+                                <a href="#" class="hammer">
+                                    <i class="flaticon-hammer"></i>
+                                </a>
+                            </div>
+                            <div class="auction-content">
+                                <h5>Gold Ring With Clear Stones</h5>
+                                <div class="bid d-flex justify-content-between">
+                                    <div class="current-bid d-flex">
+                                        <i class="flaticon-hammer"></i>
+                                        <p class="d-flex flex-column">Current Bid
+                                            <span>$876.00</span>
+                                        </p>
+                                    </div>
+                                    <div class="buy-now-price d-flex">
+                                        <i class="flaticon-money"></i>
+                                        <p class="d-flex flex-column">Buy Now
+                                            <span>$5000.00</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="time d-flex ">
+                                <div class="countdown" data-countdown="10/31/2020 20:00"></div>
+                                <span>30 Bids</span>
+                            </div>
+                            <div class="button text-center">
+                                <a href="auction-details.html">Submit A Bid</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="jewelry-bg">
+                <img src="assets/img/jwelry-bg.png" alt="">
+            </div>
+        </section>
+        <!-- End Car Auction -->
+        <!-- Register For Free -->
+        <section id="register-for-free">
+            <div class="container">
+                <div class="content" style="background-image: url(assets/img/call-bg.png);">
+                    <div class="row d-flex justify-content-between align-items-center">
+                        <div class="col-lg-5 col-md-8">
+                            <h2>Register For Free & Start Bidding Now!</h2>
+                            <p>From cars to diamonds to iPhones, we have it all.</p>
+                        </div>
+                        <div class="col-lg-2 col-md-4">
+                            <a href="#">Register</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Register For Free -->
+        <!-- Watches Auction -->
+        <section id="watches-auction">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 header d-flex justify-content-between">
+                        <div class="title d-flex">
+                            <img src="assets/img/catagory03.png" alt="">
+                            <div class="text">
+                                <h1>Watches</h1>
+                                <p>Shop for men & women designer brand watches</p>
+                            </div>
+                        </div>
+                        <div class="header-button">
+                            <a href="#" class="view-all btn rounded-pill">View All</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-6 col-sm-10">
+                        <div class="auction-item">
+                            <div class="image">
+                                <a href="auction-details.html">
+                                    <img src="assets/img/watches-auction-1.jpg" alt="">
+                                </a>
+                                <a href="#" class="star">
+                                    <i class="far fa-star"></i>
+                                </a>
+                                <a href="#" class="hammer">
+                                    <i class="flaticon-hammer"></i>
+                                </a>
+                            </div>
+                            <div class="auction-content">
+                                <h5>Vintage Rolex</h5>
+                                <div class="bid d-flex justify-content-between">
+                                    <div class="current-bid d-flex">
+                                        <i class="flaticon-hammer"></i>
+                                        <p class="d-flex flex-column">Current Bid
+                                            <span>$876.00</span>
+                                        </p>
+                                    </div>
+                                    <div class="buy-now-price d-flex">
+                                        <i class="flaticon-money"></i>
+                                        <p class="d-flex flex-column">Buy Now
+                                            <span>$5000.00</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="time d-flex ">
+                                <div class="countdown" data-countdown="10/31/2020 20:00"></div>
+                                <span>30 Bids</span>
+                            </div>
+                            <div class="button text-center">
+                                <a href="auction-details.html">Submit A Bid</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-10">
+                        <div class="auction-item">
+                            <div class="image">
+                                <a href="auction-details.html">
+                                    <img src="assets/img/watches-auction-2.jpg" alt="">
+                                </a>
+                                <a href="#" class="star">
+                                    <i class="far fa-star"></i>
+                                </a>
+                                <a href="#" class="hammer">
+                                    <i class="flaticon-hammer"></i>
+                                </a>
+                            </div>
+                            <div class="auction-content">
+                                <h5>Lady’s Vintage Rolex Datejust</h5>
+                                <div class="bid d-flex justify-content-between">
+                                    <div class="current-bid d-flex">
+                                        <i class="flaticon-hammer"></i>
+                                        <p class="d-flex flex-column">Current Bid
+                                            <span>$876.00</span>
+                                        </p>
+                                    </div>
+                                    <div class="buy-now-price d-flex">
+                                        <i class="flaticon-money"></i>
+                                        <p class="d-flex flex-column">Buy Now
+                                            <span>$5000.00</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="time d-flex ">
+                                <div class="countdown" data-countdown="10/31/2020 20:00"></div>
+                                <span>30 Bids</span>
+                            </div>
+                            <div class="button text-center">
+                                <a href="auction-details.html">Submit A Bid</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-10">
+                        <div class="auction-item">
+                            <div class="image">
+                                <a href="auction-details.html">
+                                    <img src="assets/img/watches-auction-3.jpg" alt="">
+                                </a>
+                                <a href="#" class="star">
+                                    <i class="far fa-star"></i>
+                                </a>
+                                <a href="#" class="hammer">
+                                    <i class="flaticon-hammer"></i>
+                                </a>
+                            </div>
+                            <div class="auction-content">
+                                <h5>Lady’s Retro Diamond</h5>
+                                <div class="bid d-flex justify-content-between">
+                                    <div class="current-bid d-flex">
+                                        <i class="flaticon-hammer"></i>
+                                        <p class="d-flex flex-column">Current Bid
+                                            <span>$876.00</span>
+                                        </p>
+                                    </div>
+                                    <div class="buy-now-price d-flex">
+                                        <i class="flaticon-money"></i>
+                                        <p class="d-flex flex-column">Buy Now
+                                            <span>$5000.00</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="time d-flex ">
+                                <div class="countdown" data-countdown="10/31/2020 20:00"></div>
+                                <span>30 Bids</span>
+                            </div>
+                            <div class="button text-center">
+                                <a href="auction-details.html">Submit A Bid</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Emd Watches Auction -->
+        <!-- Popular Auctions -->
+        <section id="popular-auctions">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="title text-center">
+                            <span>Closing Within 24 Hours</span>
+                            <h1>Popular Auctions</h1>
+                            <p>Bid and win great deals,Our auction process is simple, efficient, and transparent.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="popular-products">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="popular-item d-flex">
+                                <div class="image">
+                                    <a href="#">
+                                        <img src="assets/img/popular-auction-1.jpg" alt="">
+                                    </a>
+                                    <a href="#" class="hammer">
+                                        <i class="flaticon-hammer"></i>
+                                    </a>
+                                </div>
+                                <div class="content text-center">
+                                    <h5>
+                                        <a href="#">Apple Macbook Pro Laptop</a>
+                                    </h5>
+                                    <div class="current-bid d-flex">
+                                        <i class="flaticon-hammer"></i>
+                                        <p class="d-flex flex-column">Current Bid
+                                            <span>$876.00</span>
+                                        </p>
+                                    </div>
+                                    <p class="total-bid">Total Bids :
+                                        <span>130 Bids</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="popular-item d-flex">
+                                <div class="image">
+                                    <a href="#">
+                                        <img src="assets/img/popular-auction-2.jpg" alt="">
+                                    </a>
+                                    <a href="#" class="hammer">
+                                        <i class="flaticon-hammer"></i>
+                                    </a>
+                                </div>
+                                <div class="content text-center">
+                                    <h5>
+                                        <a href="#">Canon EOS Rebel T6I Digital Camera</a>
+                                    </h5>
+                                    <div class="current-bid d-flex">
+                                        <i class="flaticon-hammer"></i>
+                                        <p class="d-flex flex-column">Current Bid
+                                            <span>$876.00</span>
+                                        </p>
+                                    </div>
+                                    <p class="total-bid">Total Bids :
+                                        <span>130 Bids</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="popular-item d-flex">
+                                <div class="image">
+                                    <a href="#">
+                                        <img src="assets/img/popular--auction-3.jpg" alt="">
+                                    </a>
+                                    <a href="#" class="hammer">
+                                        <i class="flaticon-hammer"></i>
+                                    </a>
+                                </div>
+                                <div class="content text-center">
+                                    <h5>
+                                        <a href="#">14k Gold Geneve Watch,24.5g</a>
+                                    </h5>
+                                    <div class="current-bid d-flex">
+                                        <i class="flaticon-hammer"></i>
+                                        <p class="d-flex flex-column">Current Bid
+                                            <span>$876.00</span>
+                                        </p>
+                                    </div>
+                                    <p class="total-bid">Total Bids :
+                                        <span>130 Bids</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="popular-item d-flex">
+                                <div class="image">
+                                    <a href="#">
+                                        <img src="assets/img/popular-auction-4.jpg" alt="">
+                                    </a>
+                                    <a href="#" class="hammer">
+                                        <i class="flaticon-hammer"></i>
+                                    </a>
+                                </div>
+                                <div class="content text-center">
+                                    <h5>
+                                        <a href="#">14K White Gold 185.60 Grams 5.95 Carats</a>
+                                    </h5>
+                                    <div class="current-bid d-flex">
+                                        <i class="flaticon-hammer"></i>
+                                        <p class="d-flex flex-column">Current Bid
+                                            <span>$876.00</span>
+                                        </p>
+                                    </div>
+                                    <p class="total-bid">Total Bids :
+                                        <span>130 Bids</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="popular-item d-flex">
+                                <div class="image">
+                                    <a href="#">
+                                        <img src="assets/img/popular-auction-5.jpg" alt="">
+                                    </a>
+                                    <a href="#" class="hammer">
+                                        <i class="flaticon-hammer"></i>
+                                    </a>
+                                </div>
+                                <div class="content text-center">
+                                    <h5>
+                                        <a href="#">2009 Toyota Prius (Medford, NY 11763)</a>
+                                    </h5>
+                                    <div class="current-bid d-flex">
+                                        <i class="flaticon-hammer"></i>
+                                        <p class="d-flex flex-column">Current Bid
+                                            <span>$876.00</span>
+                                        </p>
+                                    </div>
+                                    <p class="total-bid">Total Bids :
+                                        <span>130 Bids</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="popular-item d-flex">
+                                <div class="image">
+                                    <a href="#">
+                                        <img src="assets/img/popular-auction-6.jpg" alt="">
+                                    </a>
+                                    <a href="#" class="hammer">
+                                        <i class="flaticon-hammer"></i>
+                                    </a>
+                                </div>
+                                <div class="content text-center">
+                                    <h5>
+                                        <a href="#">.6 Gram Pure Gold Nugget</a>
+                                    </h5>
+                                    <div class="current-bid d-flex">
+                                        <i class="flaticon-hammer"></i>
+                                        <p class="d-flex flex-column">Current Bid
+                                            <span>$876.00</span>
+                                        </p>
+                                    </div>
+                                    <p class="total-bid">Total Bids :
+                                        <span>130 Bids</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="popular-bg">
+                <img src="assets/img/popular-bg.png" alt="">
+            </div>
+        </section>
+        <!-- End Popular Auctions -->
+        <!-- Coins & Bullion -->
+        <section id="coins-auction">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 header d-flex justify-content-between">
+                        <div class="title d-flex">
+                            <img src="assets/img/catagory08.png" alt="">
+                            <div class="text">
+                                <h1>Coins & Bullion</h1>
+                                <p>Discover rare, foreign, & ancient coins that are worth collecting</p>
+                            </div>
+                        </div>
+                        <div class="header-button">
+                            <a href="#" class="view-all btn rounded-pill">View All</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-6 col-sm-10">
+                        <div class="auction-item">
+                            <div class="image">
+                                <a href="auction-details.html">
+                                    <img src="assets/img/coins-auction-1.jpg" alt="">
+                                </a>
+                                <a href="#" class="star">
+                                    <i class="far fa-star"></i>
+                                </a>
+                                <a href="#" class="hammer">
+                                    <i class="flaticon-hammer"></i>
+                                </a>
+                            </div>
+                            <div class="auction-content">
+                                <h5>Ancient & World Coins</h5>
+                                <div class="bid d-flex justify-content-between">
+                                    <div class="current-bid d-flex">
+                                        <i class="flaticon-hammer"></i>
+                                        <p class="d-flex flex-column">Current Bid
+                                            <span>$876.00</span>
+                                        </p>
+                                    </div>
+                                    <div class="buy-now-price d-flex">
+                                        <i class="flaticon-money"></i>
+                                        <p class="d-flex flex-column">Buy Now
+                                            <span>$5000.00</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="time d-flex ">
+                                <div class="countdown" data-countdown="10/31/2020 20:00"></div>
+                                <span>30 Bids</span>
+                            </div>
+                            <div class="button text-center">
+                                <a href="auction-details.html">Submit A Bid</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-10">
+                        <div class="auction-item">
+                            <div class="image">
+                                <a href="auction-details.html">
+                                    <img src="assets/img/coins-auction-2.jpg" alt="">
+                                </a>
+                                <a href="#" class="star">
+                                    <i class="far fa-star"></i>
+                                </a>
+                                <a href="#" class="hammer">
+                                    <i class="flaticon-hammer"></i>
+                                </a>
+                            </div>
+                            <div class="auction-content">
+                                <h5>Ancient Lydia</h5>
+                                <div class="bid d-flex justify-content-between">
+                                    <div class="current-bid d-flex">
+                                        <i class="flaticon-hammer"></i>
+                                        <p class="d-flex flex-column">Current Bid
+                                            <span>$876.00</span>
+                                        </p>
+                                    </div>
+                                    <div class="buy-now-price d-flex">
+                                        <i class="flaticon-money"></i>
+                                        <p class="d-flex flex-column">Buy Now
+                                            <span>$5000.00</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="time d-flex ">
+                                <div class="countdown" data-countdown="10/31/2020 20:00"></div>
+                                <span>30 Bids</span>
+                            </div>
+                            <div class="button text-center">
+                                <a href="auction-details.html">Submit A Bid</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-10">
+                        <div class="auction-item">
+                            <div class="image">
+                                <a href="auction-details.html">
+                                    <img src="assets/img/coins-auction-3.jpg" alt="">
+                                </a>
+                                <a href="#" class="star">
+                                    <i class="far fa-star"></i>
+                                </a>
+                                <a href="#" class="hammer">
+                                    <i class="flaticon-hammer"></i>
+                                </a>
+                            </div>
+                            <div class="auction-content">
+                                <h5>Ancient Rome</h5>
+                                <div class="bid d-flex justify-content-between">
+                                    <div class="current-bid d-flex">
+                                        <i class="flaticon-hammer"></i>
+                                        <p class="d-flex flex-column">Current Bid
+                                            <span>$876.00</span>
+                                        </p>
+                                    </div>
+                                    <div class="buy-now-price d-flex">
+                                        <i class="flaticon-money"></i>
+                                        <p class="d-flex flex-column">Buy Now
+                                            <span>$5000.00</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="time d-flex ">
+                                <div class="countdown" data-countdown="10/31/2020 20:00"></div>
+                                <span>30 Bids</span>
+                            </div>
+                            <div class="button text-center">
+                                <a href="auction-details.html">Submit A Bid</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="coins-bg">
+                <img src="assets/img/coin-bg.png" alt="">
+            </div>
+        </section>
+        <!-- End Coins & Bullion -->
+        <!-- Real Estate -->
+        <section id="real-estate-auction">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 header d-flex justify-content-between">
+                        <div class="title d-flex">
+                            <img src="assets/img/catagory06.png" alt="">
+                            <div class="text">
+                                <h1>Real Estate</h1>
+                                <p>Find auctions for Homes, Condos, Residential & Commercial Properties.</p>
+                            </div>
+                        </div>
+                        <div class="header-button">
+                            <a href="#" class="view-all btn rounded-pill">View All</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="real-estate-slider">
+                    <div class="owl-carousel owl-theme">
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-lg-5 p-0">
+                                    <h3>
+                                        <a href="#">Brand New Apartments In Esenyurt, Istanbul</a>
+                                    </h3>
+                                    <div class="bid d-flex justify-content-around">
+                                        <div class="current-bid d-flex">
+                                            <i class="flaticon-hammer"></i>
+                                            <p class="d-flex flex-column">Current Bid
+                                                <span>$876.00</span>
+                                            </p>
+                                        </div>
+                                        <div class="buy-now-price d-flex">
+                                            <i class="flaticon-money"></i>
+                                            <p class="d-flex flex-column">Buy Now
+                                                <span>$5000.00</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="time d-flex ">
+                                        <div class="countdown" data-countdown="10/31/2020 20:00"></div>
+                                        <span>30 Bids</span>
+                                    </div>
+                                    <div class="button text-center">
+                                        <a href="#">Submit A Bid</a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7">
+                                    <div class="image">
+                                        <img src="assets/img/realstate-auction-1.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-lg-5 p-0">
+                                    <h3>
+                                        <a href="#">Brand New Apartments In Esenyurt, Istanbul</a>
+                                    </h3>
+                                    <div class="bid d-flex justify-content-around">
+                                        <div class="current-bid d-flex">
+                                            <i class="flaticon-hammer"></i>
+                                            <p class="d-flex flex-column">Current Bid
+                                                <span>$876.00</span>
+                                            </p>
+                                        </div>
+                                        <div class="buy-now-price d-flex">
+                                            <i class="flaticon-money"></i>
+                                            <p class="d-flex flex-column">Buy Now
+                                                <span>$5000.00</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="time d-flex ">
+                                        <div class="countdown" data-countdown="10/31/2020 20:00"></div>
+                                        <span>30 Bids</span>
+                                    </div>
+                                    <div class="button text-center">
+                                        <a href="#">Submit A Bid</a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7">
+                                    <div class="image">
+                                        <img src="assets/img/realstate-auction-1.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-lg-5 p-0">
+                                    <h3>
+                                        <a href="#">Brand New Apartments In Esenyurt, Istanbul</a>
+                                    </h3>
+                                    <div class="bid d-flex justify-content-around">
+                                        <div class="current-bid d-flex">
+                                            <i class="flaticon-hammer"></i>
+                                            <p class="d-flex flex-column">Current Bid
+                                                <span>$876.00</span>
+                                            </p>
+                                        </div>
+                                        <div class="buy-now-price d-flex">
+                                            <i class="flaticon-money"></i>
+                                            <p class="d-flex flex-column">Buy Now
+                                                <span>$5000.00</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="time d-flex ">
+                                        <div class="countdown" data-countdown="10/31/2020 20:00"></div>
+                                        <span>30 Bids</span>
+                                    </div>
+                                    <div class="button text-center">
+                                        <a href="#">Submit A Bid</a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7">
+                                    <div class="image">
+                                        <img src="assets/img/realstate-auction-1.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-lg-5 p-0">
+                                    <h3>
+                                        <a href="#">Brand New Apartments In Esenyurt, Istanbul</a>
+                                    </h3>
+                                    <div class="bid d-flex justify-content-around">
+                                        <div class="current-bid d-flex">
+                                            <i class="flaticon-hammer"></i>
+                                            <p class="d-flex flex-column">Current Bid
+                                                <span>$876.00</span>
+                                            </p>
+                                        </div>
+                                        <div class="buy-now-price d-flex">
+                                            <i class="flaticon-money"></i>
+                                            <p class="d-flex flex-column">Buy Now
+                                                <span>$5000.00</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="time d-flex ">
+                                        <div class="countdown" data-countdown="10/31/2020 20:00"></div>
+                                        <span>30 Bids</span>
+                                    </div>
+                                    <div class="button text-center">
+                                        <a href="#">Submit A Bid</a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7">
+                                    <div class="image">
+                                        <img src="assets/img/realstate-auction-1.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-lg-5 p-0">
+                                    <h3>
+                                        <a href="#">Brand New Apartments In Esenyurt, Istanbul</a>
+                                    </h3>
+                                    <div class="bid d-flex justify-content-around">
+                                        <div class="current-bid d-flex">
+                                            <i class="flaticon-hammer"></i>
+                                            <p class="d-flex flex-column">Current Bid
+                                                <span>$876.00</span>
+                                            </p>
+                                        </div>
+                                        <div class="buy-now-price d-flex">
+                                            <i class="flaticon-money"></i>
+                                            <p class="d-flex flex-column">Buy Now
+                                                <span>$5000.00</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="time d-flex ">
+                                        <div class="countdown" data-countdown="10/31/2020 20:00"></div>
+                                        <span>30 Bids</span>
+                                    </div>
+                                    <div class="button text-center">
+                                        <a href="#">Submit A Bid</a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7">
+                                    <div class="image">
+                                        <img src="assets/img/realstate-auction-1.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="real-estate-bg">
+                <img src="assets/img/real-bg.png" alt="">
+            </div>
+        </section>
+        <!-- End Real Estate -->
+        <!-- How It Works -->
+        <section id="how-it-works">
+            <div class="container bg">
+                <div class="title">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1>How It Works</h1>
+                            <p>Easy 3 steps to win</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="item">
+                            <div class="image">
+                                <img src="assets/img/how1.png" class="img-fluid" alt="">
+                            </div>
+                            <div class="content">
+                                <h3>Sign Up</h3>
+                                <p>No Credit Card Required</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="item">
+                            <div class="image">
+                                <img src="assets/img/how2.png" class="img-fluid" alt="">
+                            </div>
+                            <div class="content">
+                                <h3>Bid</h3>
+                                <p>Bidding is free Only pay if you win</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="item">
+                            <div class="image">
+                                <img src="assets/img/how3.png" class="img-fluid" alt="">
+                            </div>
+                            <div class="content">
+                                <h3>Win</h3>
+                                <p>Fun - Excitement - Great deals</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End How It Works -->
+        <!-- Customer Comments  -->
+        <section id="customer-comments">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="title text-center">
+                            <h1>Don’t Just Take Our Word For It!</h1>
+                            <p>Our hard work is paying off. Great reviews from amazing customers.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="customers-slider">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="owl-carousel owl-theme">
+                                <div class="item">
+                                    <div class="comment">
+                                        <p>
+                                            I can't stop bidding! It's a great way to spend some time and I want
+                                            everything on
+                                            Sbidu.
+                                        </p>
+                                    </div>
+                                    <div class="author d-flex">
+                                        <div class="image">
+                                            <img src="assets/img/client01.png" alt="">
+                                        </div>
+                                        <div class="d-flex flex-column ">
+                                            <h5>
+                                                <a href="#">Alexis Moore</a>
+                                            </h5>
+                                            <div class="icon">
+                                                <i class="fas fa-star yellow"></i>
+                                                <i class="fas fa-star yellow"></i>
+                                                <i class="fas fa-star yellow"></i>
+                                                <i class="fas fa-star yellow"></i>
+                                                <i class="fas fa-star yellow"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="comment">
+                                        <p>
+                                            This was my first time, but it was exciting. I will try it again. Thank you
+                                            so much.
+                                        </p>
+                                    </div>
+                                    <div class="author d-flex">
+                                        <div class="image">
+                                            <img src="assets/img/client03.png" alt="">
+                                        </div>
+                                        <div class="d-flex flex-column ">
+                                            <h5>
+                                                <a href="#">Emma Powell</a>
+                                            </h5>
+                                            <div class="icon">
+                                                <i class="fas fa-star yellow"></i>
+                                                <i class="fas fa-star yellow"></i>
+                                                <i class="fas fa-star yellow"></i>
+                                                <i class="fas fa-star yellow"></i>
+                                                <i class="fas fa-star yellow"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="comment">
+                                        <p>
+                                            I came I saw I won. Love what I have won, and will try to win something
+                                            else.
+                                        </p>
+                                    </div>
+                                    <div class="author d-flex">
+                                        <div class="image">
+                                            <img src="assets/img/client02.png" alt="">
+                                        </div>
+                                        <div class="d-flex flex-column ">
+                                            <h5>
+                                                <a href="#">Darin Griffin</a>
+                                            </h5>
+                                            <div class="icon">
+                                                <i class="fas fa-star yellow"></i>
+                                                <i class="fas fa-star yellow"></i>
+                                                <i class="fas fa-star yellow"></i>
+                                                <i class="fas fa-star yellow"></i>
+                                                <i class="fas fa-star yellow"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="comment">
+                                        <p>
+                                            I can't stop bidding! It's a great way to spend some time and I want
+                                            everything on
+                                            Sbidu.
+                                        </p>
+                                    </div>
+                                    <div class="author d-flex">
+                                        <div class="image">
+                                            <img src="assets/img/client04.png" alt="">
+                                        </div>
+                                        <div class="d-flex flex-column ">
+                                            <h5>
+                                                <a href="#">David Ben</a>
+                                            </h5>
+                                            <div class="icon">
+                                                <i class="fas fa-star yellow"></i>
+                                                <i class="fas fa-star yellow"></i>
+                                                <i class="fas fa-star yellow"></i>
+                                                <i class="fas fa-star yellow"></i>
+                                                <i class="fas fa-star yellow"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="comment">
+                                        <p>
+                                            I came I saw I won. Love what I have won, and will try to win something
+                                            else.
+                                        </p>
+                                    </div>
+                                    <div class="author d-flex">
+                                        <div class="image">
+                                            <img src="assets/img/client05.png" alt="">
+                                        </div>
+                                        <div class="d-flex flex-column ">
+                                            <h5>
+                                                <a href="#">William Shakespeare</a>
+                                            </h5>
+                                            <div class="icon">
+                                                <i class="fas fa-star yellow"></i>
+                                                <i class="fas fa-star yellow"></i>
+                                                <i class="fas fa-star yellow"></i>
+                                                <i class="fas fa-star yellow"></i>
+                                                <i class="fas fa-star yellow"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- Customer Comments  -->
+    </main>
+
+    <footer style="background-image: url(assets/img/footer-bg.jpg);">
+        <div class="footer-bg">
+            <img src="assets/img/footer-top-shape.png" class="img-fluid" alt="">
+        </div>
+        <div class="subscribe">
+            <div class="container area">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="image">
+                            <img src="assets/img/newslater.png" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="content">
+                            <div class="title">
+                                <h4>Subscribe to Sbidu</h4>
+                                <h2>To Get Exclusive Benefits</h2>
+                            </div>
+                            <form action="#">
+                                <input type="text" placeholder="Enter Your Email">
+                                <button type="submit">Subscribe</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="item">
+                            <h4>
+                                Auction Categories
+                            </h4>
+                            <ul>
+                                <li>
+                                    <a href="#">Ending Now</a>
+                                </li>
+                                <li>
+                                    <a href="#">Vehicles</a>
+                                </li>
+                                <li>
+                                    <a href="#">Watches</a>
+                                </li>
+                                <li>
+                                    <a href="#">Electronics</a>
+                                </li>
+                                <li>
+                                    <a href="#">Real Estate </a>
+                                </li>
+                                <li>
+                                    <a href="#">Jewelry</a>
+                                </li>
+                                <li>
+                                    <a href="#">Art</a>
+                                </li>
+                                <li>
+                                    <a href="#">Sports & Outdoor</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="item">
+                            <h4>
+                                About Us
+                            </h4>
+                            <ul>
+                                <li>
+                                    <a href="#">About Sbidu</a>
+                                </li>
+                                <li>
+                                    <a href="#">Help</a>
+                                </li>
+                                <li>
+                                    <a href="#">Affiliates</a>
+                                </li>
+                                <li>
+                                    <a href="#">Jobs</a>
+                                </li>
+                                <li>
+                                    <a href="#">Press</a>
+                                </li>
+                                <li>
+                                    <a href="#">Our blog</a>
+                                </li>
+                                <li>
+                                    <a href="#">Collectors' portal</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="item">
+                            <h4>
+                                We're Here to Help
+                            </h4>
+                            <ul>
+                                <li>
+                                    <a href="#">Your Account</a>
+                                </li>
+                                <li>
+                                    <a href="#">Safe and Secure</a>
+                                </li>
+                                <li>
+                                    <a href="#">Shipping Information</a>
+                                </li>
+                                <li>
+                                    <a href="#">Contact Us</a>
+                                </li>
+                                <li>
+                                    <a href="#">Help & FAQ</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="item">
+                            <h4>
+                                Follow Us
+                            </h4>
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <i class="fas fa-phone-alt"></i>
+                                        (646) 663-4575
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fas fa-blender-phone"></i>
+                                        (646) 968-0608
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fas fa-envelope-open-text"></i>
+                                        help@engotheme.com
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fas fa-location-arrow"></i>
+                                        1201 Broadway Suite
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="copyright">
+                    <img src="assets/img/logo.png" class="logo" alt="">
+                    <ul class="d-flex">
+                        <li>
+                            <img src="assets/img/paypal.png" alt="">
+                        </li>
+                        <li>
+                            <img src="assets/img/visa.png" alt="">
+                        </li>
+                        <li>
+                            <img src="assets/img/discover.png" alt="">
+                        </li>
+                        <li>
+                            <img src="assets/img/mastercard.png" alt="">
+                        </li>
+                    </ul>
+                    <p>
+                        © Copyright 2020 |
+                        <a href="#">Sbidu</a>
+                        By
+                        <a href="#">Uiaxis</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+    <div class="back-to-top">
+        <i class="fas fa-angle-up"></i>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.countdown/2.2.0/jquery.countdown.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
