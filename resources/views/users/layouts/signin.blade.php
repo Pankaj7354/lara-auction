@@ -134,35 +134,54 @@
                             <h1>SIGN UP</h1>
                             <p>We're happy you're here!</p>
                         </div>
-                        <form action="#">
+                        <form action="{{route('register')}}" method="POST"> 
                             @csrf
                             <div class="form-group">
                                 <label for="name">
                                     <i class="fa fa-user-o" aria-hidden="true"></i>
                                 </label>
                                 <input  class="form-control" type="text"
-                                name='email' placeholder="Enter Your Full Name">
+                                name='name' placeholder="Enter Your First Name">
                             </div>
+                            <span class='text-danger'>{{$errors->first('name')}}</span>
+                            {{-- <div class="form-group">
+                                <label for="name">
+                                    <i class="fa fa-user-o" aria-hidden="true"></i>
+                                </label>
+                                <input  class="form-control" type="text"
+                                name='name' placeholder="Enter Your Last Name">
+                            </div>
+                            <span class='text-danger'>{{$errors->first('name')}}</span> --}}
                             <div class="form-group">
                                 <label for="email">
                                     <i class="far fa-envelope"></i>
                                 </label>
-                                <input id="email" class="form-control" type="text"
+                                <input id="email" class="form-control" type="email"
                                 name='email' placeholder="Email Address">
                             </div>
+                            <span class='text-danger'>{{$errors->first('email')}}</span>
+
                             <div class="form-group">
                                 <label for="password">
                                     <i class="fas fa-lock"></i>
                                 </label>
-                                <input id="password" class="form-control" type="password" placeholder="Password">
+                                <input class="form-control" type="password"
+                                name='password' placeholder="Password">
                                 <span class="show-password"><i class="fas fa-eye"></i></span>
                             </div>
+                            <span class='text-danger'>{{$errors->first('password')}}</span>
+
                             <div class="form-group">
                                 <label for="password-comfirm">
                                     <i class="fas fa-lock"></i>
                                 </label>
-                                <input id="password-comfirm" class="form-control" type="password" placeholder="Re-Password">
+                                <input name="password-comfirm" class="form-control" type="password"
+                                 placeholder="Re-Password">
+                                 <span class="show-password"><i class="fas fa-eye"></i></span>
+
                             </div>
+                            <span class='text-danger'>{{$errors->first('password-comfirm')}}</span>
+
                             <div class="form-group mb-0 mt-4">
                                 <button type="submit">REGISTER</button>
                             </div>
