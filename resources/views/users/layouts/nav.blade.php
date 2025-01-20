@@ -1,106 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
+<!-- Mirrored from pixner.net/sbidu/main/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 06 Jan 2025 04:53:48 GMT -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auction </title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{{asset('auction/assets/font/flaticon.css')}}" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-    <link rel="stylesheet" href="{{asset('auction/assets/css/style.css')}}">
-    <link rel="shortcut icon" href="{{asset('auction/assets/img/favicon-logo.png')}}" type="image/x-icon">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <script src="https://kit.fontawesome.com/5f8f97e3fd.js" crossorigin="anonymous"></script>
+    <title>Sbidu - Bid And Auction HTML Template</title>
+
+    <link rel="stylesheet" href="{{asset('auction/assets/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('auction/assets/css/all.min.css')}}">
+    <link rel="stylesheet" href="{{asset('auction/assets/css/animate.css')}}">
+    <link rel="stylesheet" href="{{asset('auction/assets/css/nice-select.css')}}">
+    <link rel="stylesheet" href="{{asset('auction/assets/css/owl.min.css')}}">
+    <link rel="stylesheet" href="{{asset('auction/assets/css/magnific-popup.css')}}">
+    <link rel="stylesheet" href="{{asset('auction/assets/css/flaticon.css')}}">
+    <link rel="stylesheet" href="{{asset('auction/assets/css/jquery-ui.min.css')}}">
+    <link rel="stylesheet" href="{{asset('auction/assets/css/aos.css')}}">
+    <link rel="stylesheet" href="{{asset('auction/assets/css/main.css')}}">
+
+    <link rel="shortcut icon" href="{{asset('auction/assets/images/favicon.png')}}"
+     type="image/x-icon">
 </head>
 
 <body>
-
-    <section id="loader">
-        <div class="img-loader">
+    <!--============= ScrollToTop Section Starts Here =============-->
+    <div class="overlayer" id="overlayer">
+        <div class="loader">
+            <div class="loader-inner"></div>
         </div>
-    </section>
-    
+    </div>
+    <a href="#0" class="scrollToTop"><i class="fas fa-angle-up"></i></a>
+    <div class="overlay"></div>
+    <!--============= ScrollToTop Section Ends Here =============-->
+
+
+    <!--============= Header Section Starts Here =============-->
     <header>
         <div class="header-top">
             <div class="container">
-                <div class="content d-flex justify-content-between align-items-center">
-                    <ul class="d-flex">
-                        <li>
-                            <a href="#" class="mr-3">
+                <div class="header-top-wrapper">
+                    <ul class="customer-support">
+                        <li class="cmn-support-text">
+                            <a href="#0" class="mr-3">
                                 <i class="fas fa-phone-alt"></i>
-                                <span>Customer Support</span>
+                                <span class="ml-2 d-none d-sm-inline-block">
+                                    Customer Support
+                                </span>
                             </a>
                         </li>
-                        <li>
+                        <li class="customer-cupport-lang">
                             <i class="fas fa-globe"></i>
                             <select name="language" class="select-bar">
                                 <option value="en">En</option>
-                                <option value="az">Az</option>
-                                <option value="ru">Ru</option>
+                                <option value="Bn">Bn</option>
+                                <option value="Rs">Rs</option>
+                                <option value="Us">Us</option>
+                                <option value="Pk">Pk</option>
+                                <option value="Arg">Arg</option>
                             </select>
                         </li>
                     </ul>
-                    <div class="my-account d-flex align-items-center">
-                        <a href="{{route('login')}}" class="login">Login</a>
-                        <a href="my-account-bids.html" class="user">
-                            <i class="flaticon-user"></i>
+                    <ul class="cart-button-area">
+                        <li>
+                            <a href="#0" class="cart-button"><i class="flaticon-shopping-basket">
+
+                            </i>
+                                <span class="amount">08</span></a>
+                        </li>                        
+                        <li>
+                            <a href="{{route('login')}}"
+                             class="user-button"><i class="flaticon-user">
+
+                            </i>
+                            </a>
+                        </li>                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="header-bottom">
+            <div class="container">
+                <div class="header-wrapper">
+                    <div class="logo">
+                        <a href="index.html">
+                            <img src="{{asset('auction/assets/images/logo/logo.png')}}" alt="logo">
                         </a>
+                    </div>
+                    <ul class="menu ml-auto">
+                        <li>
+                            <a href="#0">Home</a>
+                            <ul class="submenu">
+                                <li>
+                                    <a href="index.html">Home Page One</a>
+                                </li>
+                                <li>
+                                    <a href="index-2.html">Home Page Two</a>
+                                </li>
+                                <li>
+                                    <a href="index-3.html">Home Page Three</a>
+                                </li>
+                                <li>
+                                    <a href="index-4.html">Home Page Four</a>
+                                </li>
+                                <li>
+                                    <a href="index-5.html">Home Page Five</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="product.html">Auction</a>
+                        </li>
+                        <li>
+                            <a href="#0">Pages</a>
+                            <ul class="submenu">
+                                <li>
+                                    <a href="#0">Product</a>
+                                    <ul class="submenu">
+                                        <li>
+                                            <a href="product.html">Product Page 1</a>
+                                        </li>
+                                        <li>
+                                            <a href="product-2.html">Product Page 2</a>
+                                        </li>
+                                        <li>
+                                            <a href="product-details.html">Product Details</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#0">My Account</a>
+                                    <ul class="submenu">
+                                        <li>
+                                            <a href="sign-up.html">Sign Up</a>
+                                        </li>
+                                        <li>
+                                            <a href="sign-in.html">Sign In</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#0">Dashboard</a>
+                                    <ul class="submenu">
+                                        <li>
+                                            <a href="dashboard.html">Dashboard</a>
+                                        </li>
+                                        <li>
+                                            <a href="profile.html">Personal Profile</a>
+                                        </li>
+                                        <li>
+                                            <a href="my-bid.html">My Bids</a>
+                                        </li>
+                                        <li>
+                                            <a href="winning-bids.html">Winning Bids</a>
+                                        </li>
+                                        <li>
+                                            <a href="notifications.html">My Alert</a>
+                                        </li>
+                                        <li>
+                                            <a href="my-favorites.html">My Favorites</a>
+                                        </li>
+                                        <li>
+                                            <a href="referral.html">Referrals</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="about.html">About Us</a>
+                                </li>
+                                <li>
+                                    <a href="faqs.html">Faqs</a>
+                                </li>
+                                <li>
+                                    <a href="error.html">404 Error</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                    <form class="search-form">
+                        <input type="text" placeholder="Search for brand, model....">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                    <div class="search-bar d-md-none">
+                        <a href="#0"><i class="fas fa-search"></i></a>
+                    </div>
+                    <div class="header-bar d-lg-none">
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </div>
                 </div>
             </div>
         </div>
-
-            <!-- Navbar -->
-            <div class="header-bottom">
-                <nav class="navbar navbar-expand-lg">
-                    <div class="container">
-                        <div class="logo">
-                            <a class="navbar-brand" href="index.html">
-                                <img src="{{asset('auction/assets/img/logo.png')}}" alt="logo">
-                            </a>
-                            <button class="navbar-toggler" type="button" data-toggle="collapse"
-                                data-target="#navbarSupportedContent" 
-                                aria-controls="navbarSupportedContent"
-                                aria-expanded="false" aria-label="Toggle navigation">
-                                <i class="fas fa-bars navbar-toggler-icon"></i>
-                            </button>
-                        </div>
-    
-                        <div class="collapse navbar-collapse justify-content-end"
-                        id="navbarSupportedContent">
-                            <ul class="navbar-nav">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="index.html">Home</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="auction.html">Auction</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="about-us.html">About Us</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="contact.html">Contact</a>
-                                </li>
-                            </ul>
-    
-                        </div>
-                        <div class="search-nav">
-                            <span class="icon">
-                                <i class="fas fa-search"></i>
-                            </span>
-                            <form class="search-form my-2 my-lg-0">
-                                <input class="form-control mr-sm-2" type="search" 
-                                placeholder="Search for brand, model...."
-                                    aria-label="Search">
-                                <button class="btn-search my-2 my-sm-0" type="submit">
-                                    <i class="fas fa-search"></i></button>
-                            </form>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-            <!-- End Navbar -->
-        </header>
+    </header>

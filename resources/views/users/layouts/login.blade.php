@@ -1,81 +1,90 @@
 
 @extends('users.layouts.main')
-@section('content')
+@section('login')
 
     <main>
-        <!-- Breadcrumb -->
-        <section id="breadcrumb">
-            <div class="container">
-                <ul class="breadcrumb">
+        
+ <!--============= Hero Section Starts Here =============-->
+ <div class="hero-section">
+    <div class="container">
+        <ul class="breadcrumb">
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="#0">Pages</a>
+            </li>
+            <li>
+                <span>Sign In</span>
+            </li>
+        </ul>
+    </div>
+    <div class="bg_img hero-bg bottom_center" data-background="{{asset('auction/assets/images/banner/hero-bg.png')}}"></div>
+</div>
+<!--============= Hero Section Ends Here =============-->
+       
+
+<!--============= Account Section Starts Here =============-->
+<section class="account-section padding-bottom">
+    <div class="container">
+        <div class="account-wrapper mt--100 mt-lg--440">
+            <div class="left-side">
+                <div class="section-header" data-aos="zoom-out-down" data-aos-duration="1200">
+                    <h2 class="title">HI, THERE</h2>
+                    <p>You can log in to your Sbidu account here.</p>
+                </div>
+                <ul class="login-with">
                     <li>
-                        <a href="index.html">
-                            Home
-                            <i class="flaticon-right-arrow"></i>
-                        </a>
+                        <a href="#0"><i class="fab fa-facebook"></i>Log in with Facebook</a>
                     </li>
                     <li>
-                        <a href="index.html">
-                            Auction
-                        </a>
+                        <a href="#0"><i class="fab fa-google-plus"></i>Log in with Google</a>
                     </li>
                 </ul>
-            </div>
-            <div class="bg-image" style="background-image: url({{asset('auction/assets/img/hero-bg.png')}});">
-
-            </div>
-        </section>
-        <!-- End Breadcrumb -->
-        <!-- Login -->
-        <section id="login">
-            <div class="container">
-                <div class="account d-flex">
-                    <div class="left-side">
-                        <div class="header text-center">
-                            <h1>HI, THERE</h1>
-                            <p>You can log in to your Sbidu account here.</p>
-                        </div>
-                        <form action="{{route('login')}}" method="POST">
-                            @csrf
-                            <div class="form-group">
-                                <label for="email">
-                                    <i class="far fa-envelope"></i>
-                                </label>
-                                <input name="email" class="form-control" type="text" placeholder="Email Address">
-                                <span >
-                            </div>
-                            <span class='text-danger'>{{$errors->first('email')}}</span>
-
-                            <div class="form-group">
-                                <label for="password">
-                                    <i class="fas fa-lock"></i>
-                                </label>
-                                <input name="password" class="form-control" type="password" placeholder="Password">
-                                <span class="show-password"><i class="fas fa-eye"></i></span>
-
-                            </div>
-                            <span class='text-danger'>{{$errors->first('password')}}</span>
-                            <div class="form-group">
-                                <a href="#">Forgot Password?</a>
-                            </div>
-                            <div class="form-group mb-0 mt-4">
-                                <button type="submit">LOG IN</button>
-                            </div>
-                        </form>
+                <div class="or">
+                    <span>Or</span>
+                </div>
+                <form action="{{route('login')}}" method="POST">
+                    @csrf
+                    <div class="form-group mb-30">
+                        <label for="login-email"><i class="far fa-envelope"></i></label>
+                        <input type="text" name="login-email" placeholder="Email Address">
                     </div>
-                    <div class="right-side">
-                        <div class="sign-up">
-                            <h2>NEW HERE?</h2>
-                            <p>Sign up and create your Account</p>
-                            <a href="sing-up.html">SING UP</a>
-                        </div>
+                    <span class='text-danger'>{{$errors->first('email')}}</span>
+                    <div class="form-group">
+                        <label for="login-pass"><i class="fas fa-lock"></i></label>
+                        <input type="password" name="login-pass" placeholder="Password">
+                        <span class="pass-type"><i class="fas fa-eye"></i></span>
+
                     </div>
+                    <span class='text-danger'>{{$errors->first('password')}}</span>
+                    <div class="form-group mt-3 mb-3">
+                        <a href="#0">Forgot Password?</a>
+                    </div>
+                    <div class="form-group mb-0">
+                        <button type="submit" class="custom-button">LOG IN</button>
+                    </div>
+                </form>
+            </div>
+            <div class="right-side cl-white">
+                <div class="section-header mb-0">
+                    <h3 class="title mt-0">NEW HERE?</h3>
+                    <p>Sign up and create your Account</p>
+                    <a href="{{route('register')}}" class="custom-button transparent">Sign Up</a>
                 </div>
             </div>
-        </section>
-        <!-- End Login -->
+        </div>
+    </div>
+</section>
+<!--============= Account Section Ends Here =============-->
+        
     </main>
 
 @endsection
+
+
+
+
 
    
  
