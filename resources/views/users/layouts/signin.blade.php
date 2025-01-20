@@ -191,7 +191,7 @@
                         <div class="sign-up">
                             <h2>ALREADY HAVE AN ACCOUNT?</h2>
                             <p>Log in and go to your Dashboard.</p>
-                            <a href="sing-in.html">LOGIN</a>
+                            <a href="{{route('login')}}">LOGIN</a>
                         </div>
                     </div>
                 </div>

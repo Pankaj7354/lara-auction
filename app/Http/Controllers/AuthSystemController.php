@@ -25,9 +25,57 @@ class AuthSystemController extends Controller
                 'email' => $request->email,
                 'password' => bcrypt($request->password),
             ]);
+            if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+                return to_route('index');
+            } else {
+                return redirect()->back()->with('error', 'Invalid email or password');
+            }
+
             // $data = $request->all();
             // dd($data);
         }
         return view('users.layouts.signin');
+    }
+    public function login(Request $request)
+    {
+
+
+        if ($request->isMethod('post')) {
+            // dd($request->toArray());
+            $request->validate([
+                'email' => 'required|email',
+                'password' => 'required',
+            ]);
+
+            Auth::attempt(['email' => $request->email, 'password' => $request->password]);
+            // dd(Auth::user());
+            if (Auth::user()->role == 'admin') {
+                // dd("admin");
+                return redirect()->route('admin_deshbord');
+            } elseif (Auth::user()->role == 'user') {
+                // dd('user');
+                return to_route('/');
+            } else {
+                return to_route('login')->with('error', 'Invalid email or password');
+            }
+        }
+
+        return view('users.layouts.login');
+    }
+
+    public function Deshbord()
+    {
+        return view('admin.index');
+    }
+
+
+
+
+
+    public function logout()
+    {
+        session()->flush();
+        Auth::logout();
+        return to_route('login')->with('success', 'Logout Successfully');
     }
 }
