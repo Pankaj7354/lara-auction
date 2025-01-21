@@ -44,7 +44,7 @@
                 <div class="or">
                     <span>Or</span>
                 </div>
-                <form action="{{route('login')}}" method="POST">
+                <form action="{{route('login')}}" method="POST" class="login-form" >
                     @csrf
                     <div class="form-group mb-30">
                         <label for="login-email"><i class="far fa-envelope"></i></label>

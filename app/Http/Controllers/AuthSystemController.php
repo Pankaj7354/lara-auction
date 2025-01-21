@@ -46,15 +46,16 @@ class AuthSystemController extends Controller
                 'email' => 'required|email',
                 'password' => 'required',
             ]);
+            // dd($request->all());
 
             Auth::attempt(['email' => $request->email, 'password' => $request->password]);
-            // dd(Auth::user());
+            dd(Auth::user());
             if (Auth::user()->role == 'admin') {
                 // dd("admin");
                 return redirect()->route('admin_deshbord');
             } elseif (Auth::user()->role == 'user') {
                 // dd('user');
-                return to_route('/');
+                return to_route('User_deshbord');
             } else {
                 return to_route('login')->with('error', 'Invalid email or password');
             }

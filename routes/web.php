@@ -33,4 +33,6 @@ Route::group(
     }
 );
 
+Route::view('Userdeshbord', 'users.user_deshbord');
+
 require __DIR__ . '/admin.php';
