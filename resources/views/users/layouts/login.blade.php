@@ -48,12 +48,12 @@
                     @csrf
                     <div class="form-group mb-30">
                         <label for="login-email"><i class="far fa-envelope"></i></label>
-                        <input type="text" name="login-email" placeholder="Email Address">
+                        <input type="text" name="email" placeholder="Email Address">
                     </div>
                     <span class='text-danger'>{{$errors->first('email')}}</span>
                     <div class="form-group">
                         <label for="login-pass"><i class="fas fa-lock"></i></label>
-                        <input type="password" name="login-pass" placeholder="Password">
+                        <input type="password" name="password" placeholder="Password">
                         <span class="pass-type"><i class="fas fa-eye"></i></span>
 
                     </div>

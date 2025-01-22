@@ -27,21 +27,19 @@
             <div class="left-side">
                 <div class="section-header" data-aos="zoom-out-down" data-aos-duration="1200">
                     <h2 class="title">HI, THERE</h2>
-                    <p>You can log in to your Sbidu account here.</p>
+                    <p>You can log in to your Auction's account here.</p>
                 </div>
-                <ul class="login-with">
-                    <li>
-                        <a href="#0"><i class="fab fa-facebook"></i>Log in with Facebook</a>
-                    </li>
-                    <li>
-                        <a href="#0"><i class="fab fa-google-plus"></i>Log in with Google</a>
-                    </li>
-                </ul>
-                <div class="or">
-                    <span>Or</span>
-                </div>
+                
                 <form action="{{route('register')}}" method="POST" class="login-form">
                     @csrf
+                    <div class="form-group mb-30">
+                        <label >
+                            <i class="far fa-envelope"></i>
+                        </label>
+                        <input  class="form-control" type="text" name='name' placeholder="Enter Your Name">
+                    </div>
+                    <span class='text-danger'>{{$errors->first('name')}}</span>
+                    
                     <div class="form-group mb-30">
                         <label for="email">
                             <i class="far fa-envelope"></i>
@@ -63,10 +61,8 @@
                         <input type="password" name="password-confirm" placeholder="Re-Password">
                         <span class="pass-type"><i class="fas fa-eye"></i></span>
                     </div>
-                    <span class='text-danger'>{{$errors->first('password-comfirm')}}</span>
-                    <div class="form-group mt-3 mb-3">
-                        <a href="#0">Forgot Password?</a>
-                    </div>
+                    <span class='text-danger'>{{$errors->first('password-confirm')}}</span>
+                    
                     <div class="form-group mb-0">
                         <button type="submit" class="custom-button">LOG IN</button>
                     </div>

@@ -8,14 +8,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Categories extends Model
 {
     use HasFactory;
-    private $table = 'categories';
-    private $primaryKey = 'id';
+    protected $table = 'categories';
+    protected $primaryKey = 'id';
 
     protected $fillable = [
-        'name',
-        'description',
-        'categories_id',
-        'status',
+        'category_name',
+        'main_image',
+        'bg_image',
+
     ];
 
     public function parent()

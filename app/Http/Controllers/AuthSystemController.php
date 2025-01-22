@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 
 class AuthSystemController extends Controller
@@ -14,19 +15,18 @@ class AuthSystemController extends Controller
     {
         if ($request->isMethod('post')) {
             $request->validate([
-                // 'name' => 'required',
                 'name' => 'required',
                 'email' => 'required|email|unique:users',
                 'password' => 'required|min:6',
-                'password-comfirm' => 'required|same:password',
+                'password-confirm' => 'required|same:password',
             ]);
             User::create([
                 'name' => $request->name,
                 'email' => $request->email,
-                'password' => bcrypt($request->password),
+                'password' => Hash::make($request->password),
             ]);
             if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-                return to_route('index');
+                return to_route('users.index');
             } else {
                 return redirect()->back()->with('error', 'Invalid email or password');
             }
@@ -49,13 +49,13 @@ class AuthSystemController extends Controller
             // dd($request->all());
 
             Auth::attempt(['email' => $request->email, 'password' => $request->password]);
-            dd(Auth::user());
+            // dd(Auth::user());
             if (Auth::user()->role == 'admin') {
                 // dd("admin");
                 return redirect()->route('admin_deshbord');
             } elseif (Auth::user()->role == 'user') {
                 // dd('user');
-                return to_route('User_deshbord');
+                return to_route('user_deshbord');
             } else {
                 return to_route('login')->with('error', 'Invalid email or password');
             }
@@ -67,6 +67,11 @@ class AuthSystemController extends Controller
     public function Deshbord()
     {
         return view('admin.index');
+    }
+
+    public function Userdeshbord()
+    {
+        return view('users.user_deshbord');
     }
 
 
