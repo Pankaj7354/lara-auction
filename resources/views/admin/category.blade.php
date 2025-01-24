@@ -18,7 +18,8 @@
 <body>
   <div class="container">
     <h2>Database Data Table</h2>
-    <a href="{{route('category.create')}}"> <button>Add</button></a>
+    <a href="{{route('category.create')}}">
+      <button>Add</button></a>
     <table id="example" class="display" style="width:100%">
       <thead>
         <tr>
@@ -37,11 +38,11 @@
                 <td><img src="{{asset('images\\' . $category->main_image)}}" alt="image" style="width: 100px; height: 100px;"></td>
                 <td><img src="{{asset('images\\' . $category->bgimage)}}" alt="image" style="width: 100px; height: 100px;"></td>
                 <td>
-                    <a href="{{route('category.edit', $category->id)}}" class="btn btn-primary">Edit</a>
+                    <a href="{{route('category.edit', $category->id)}}" class="btn btn-primary mx-2">Edit</a>
                     <form action="{{route('category.destroy',$category->id)}}" method="post">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-danger">Delete</button>
+                        <button type="submit" class="btn btn-danger mx-1">Delete</button>
                     </form>
                 </td>
             </tr>
