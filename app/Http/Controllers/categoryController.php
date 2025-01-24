@@ -37,24 +37,29 @@ class categoryController extends Controller
             'bg_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
         ]);
 
-        $image = $request->file('main_image');
-        $name = time() . '.' . $image->getClientOriginalExtension();
-        $path = public_path('/images');
-        $image->move($path, $name);
+        try {
+            // Handle the main image upload
+            $mainImage = $request->file('main_image');
+            $mainImageName = time() . '_main.' . $mainImage->getClientOriginalExtension();
+            $mainImage->move(public_path('images'), $mainImageName);
 
-        $bg_image = $request->file('bg_image');
-        $bg_name = time() . '.' . $bg_image->getClientOriginalExtension();
-        $bg_path = public_path('/images');
-        $bg_image->move($bg_path, $bg_name);
+            // Handle the background image upload
+            $bgImage = $request->file('bg_image');
+            $bgImageName = time() . '_bg.' . $bgImage->getClientOriginalExtension();
+            $bgImage->move(public_path('images'), $bgImageName);
 
-        $category = new Categories();
-        $category->name = $request->category_name;
-        $category->main_image = $name;
-        $category->bgimage = $bg_name;
-        $category->save();
 
-        return redirect()->route('category.index')
-            ->with('success', 'Category created successfully.');
+            $category = new Categories();
+            $category->name = $request->category_name;
+            $category->main_image = $mainImageName;
+            $category->bgimage = $bgImageName;
+            $category->save();
+
+            return redirect()->route('category.index')
+                ->with('success', 'Category created successfully.');
+        } catch (\Exception $e) {
+            return back()->withErrors(['error' => 'An error occurred while creating the category. Please try again.']);
+        }
     }
 
     /**

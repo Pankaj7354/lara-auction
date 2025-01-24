@@ -78,19 +78,20 @@
             </div>
             <div class="mb-3">
               <label for="productSubImages" class="form-label">Product Multipal Images</label>
-              <input type="file" class="form-control" value="{{old('product_sub_image')}}" name="product_sub_image" accept="image/*" multiple/>
+              <input type="file" class="form-control" name="product_sub_image[]" accept="image/*" multiple />
               @error('product_sub_image')
                 <div class="text-danger">{{ $message }}</div>
               @enderror
             </div>
             <div class="mb-3">
               <label for="productCategory" class="form-label">Category</label>
-              <select class="form-select" value='{{old('category_id')}}' name="category_id" >
+              <select class="form-select"  name="category_id" >
                 <option value="" disabled selected>Select a category</option>
-                <option value="Electronics">Electronics</option>
-                <option value="Clothing">Clothing</option>
-                <option value="Books">Books</option>
-                <option value="Home Appliances">Home Appliances</option>
+                @foreach ($data as $category)
+                <option value="{{ $category->id }}" {{ old('category_id') == $category->id ? 'selected' : '' }}>
+                    {{ $category->name }}
+                </option>
+            @endforeach
               </select>
               @error('category_id')
                 <div class="text-danger">{{ $message }}</div> 

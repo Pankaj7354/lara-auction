@@ -33,45 +33,47 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
+        // Validate request
         $request->validate([
             'product_name' => 'required|string|max:50',
             'product_price' => 'required|numeric',
-            'product_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
-            'product_sub_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
-            'category_id' => 'required|numeric',
-            'product_bid_start' => ['required', 'date'],
-            'product_bid_end' =>
-            [
-                'required',
-                'date',
-                'after:product_bid_start',
-            ]
+            'product_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'product_sub_image.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048', // Sub-images validation
+            'category_id' => 'required|numeric|exists:categories,id', // Ensures category exists
+            'product_bid_start' => 'required|date',
+            'product_bid_end' => 'required|date|after:product_bid_start',
         ]);
-        // dd($request->all());
+
+        // Handle single main product image
         $image = $request->file('product_image');
-        $name = time() . '.' . $image->getClientOriginalExtension();
-        $path = public_path('/product_images');
-        $image->move($path, $name);
+        $imageName = time() . '_main.' . $image->getClientOriginalExtension();
+        $image->move(public_path('/product_images'), $imageName);
 
-        $sub_image = $request->file('product_sub_image');
-        $sub_name = time() . '.' . $sub_image->getClientOriginalExtension();
-        $sub_path = public_path('/product_images');
-        $sub_image->move($sub_path, $sub_name);
+        // Handle multiple sub-images
+        $subImageNames = [];
+        if ($request->hasFile('product_sub_image')) {
+            foreach ($request->file('product_sub_image') as $index => $subImage) {
+                $subImageName = time() . "_sub_{$index}." . $subImage->getClientOriginalExtension();
+                $subImage->move(public_path('/product_images'), $subImageName);
+                $subImageNames[] = $subImageName;
+            }
+        }
 
+        // Save product data
         $product = new products();
         $product->product_name = $request->product_name;
         $product->product_price = $request->product_price;
-        $product->product_image = $name;
-        $product->product_sub_image = $sub_name;
+        $product->product_image = $imageName;
+        $product->product_sub_image = json_encode($subImageNames); // Save sub-images as JSON
         $product->category_id = $request->category_id;
         $product->product_bid_start = $request->product_bid_start;
         $product->product_bid_end = $request->product_bid_end;
         $product->save();
 
-        return redirect()->route('product.index')
-            ->with('success', 'Product created successfully.');
+        // Redirect back with success message
+        return redirect()->route('product.index')->with('success', 'Product created successfully.');
     }
+
 
     /**
      * Display the specified resource.
