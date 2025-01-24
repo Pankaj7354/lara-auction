@@ -12,7 +12,7 @@ class products extends Model
         'product_name',
         'product_price',
         'product_image',
-        'product_sub_image',
+        // 'product_sub_image',
         'category_id',
         'product_bid_start',
         'product_bid_end',

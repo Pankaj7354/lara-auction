@@ -1,12 +1,9 @@
 @extends('admin.layouts.main')
-@section ('ProductAdd')
+
+@section('ProductAdd')
     <main>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Product Table</title>
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
@@ -29,7 +26,6 @@
           <th scope="col">Product Name</th>
           <th scope="col">product Price</th>
           <th scope="col">product_image</th>
-          <th scope="col">product_sub_images</th>
           <th scope="col">Category-Id </th>
           <th scope="col">product_bid_start</th>
           <th scope="col">product_bid_end</th>
@@ -38,7 +34,26 @@
       </thead>
       <tbody id="productTableBody">
         <!-- Product rows will be added dynamically here -->
-
+        @foreach ($data as $product)
+        <tr>
+          <td>{{ $loop->iteration }}</td>
+          <td>{{ $product->product_name }}</td>
+          <td>{{ $product->product_price }}</td>
+          <td><img src="{{ asset('product_images/'.$product->product_image) }}" alt="product_image" style="width: 100px; height: 100px;"></td>
+          
+          <td>{{ $product->category_name }}</td>
+          <td>{{date('d-m-Y H:i A', strtotime($product->product_bid_start)) }}</td>
+          <td>{{ date('d-m-Y H:i A', strtotime($product->product_bid_end)) }}</td>
+          <td>
+            <a href="{{ route('product.edit', $product->id) }}" class="btn btn-sm btn-primary">Edit</a>
+            <form action="{{ route('product.destroy', $product->id) }}" method="POST" style="display: inline-block">
+              @csrf
+              @method('DELETE')
+              <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+            </form>
+          </td>
+        </tr>
+        @endforeach
       </tbody>
     </table>
   </div>
@@ -52,8 +67,13 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form id="addProductForm" method="POST" action='{{route('product.store')}}' enctype="multipart/form-data" >
+          <form id="addProductForm" method="POST" 
+          action="{{isset($data) ? route('product.update', $data->id ) : route('product.store')}}"
+          enctype="multipart/form-data" >
             @csrf
+            @if(isset($data))
+                    @method('PUT')
+                  @endif
 
             <div class="mb-3">
               <label for="productName" class="form-label">Product Name</label>
@@ -76,18 +96,18 @@
                 <div class="text-danger">{{ $message }}</div>
               @enderror
             </div>
-            <div class="mb-3">
+            {{-- <div class="mb-3">
               <label for="productSubImages" class="form-label">Product Multipal Images</label>
               <input type="file" class="form-control" name="product_sub_image[]" accept="image/*" multiple />
               @error('product_sub_image')
                 <div class="text-danger">{{ $message }}</div>
               @enderror
-            </div>
+            </div> --}}
             <div class="mb-3">
               <label for="productCategory" class="form-label">Category</label>
               <select class="form-select"  name="category_id" >
                 <option value="" disabled selected>Select a category</option>
-                @foreach ($data as $category)
+                @foreach ($category as $category)
                 <option value="{{ $category->id }}" {{ old('category_id') == $category->id ? 'selected' : '' }}>
                     {{ $category->name }}
                 </option>
@@ -152,6 +172,6 @@
       modal.hide();
     });
   </script> --}}
-</body>
-</html>
+
+</main>
 @endsection

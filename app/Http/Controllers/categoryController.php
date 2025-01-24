@@ -88,36 +88,56 @@ class categoryController extends Controller
             'main_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
             'bg_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
         ]);
+        // dd($request->toArray());
+        $category = Categories::findOrFail($id);
+        // dd($category);
 
-        $category = Categories::find($id);
+        try {
+            // Update main image if a new file is uploaded
+            if ($request->hasFile('main_image')) {
+                // Delete the old main image
+                $oldMainImagePath = public_path('images/' . $category->main_image);
+                if (File::exists($oldMainImagePath)) {
+                    File::delete($oldMainImagePath);
+                }
 
-        $main_image = public_path('image\\' . $category->main_image);
-        if (File::exists($main_image)) {
-            File::delete($main_image);
+                // Save the new main image
+                $mainImage = $request->file('main_image');
+                $mainImageName = time() . '_main.' . $mainImage->getClientOriginalExtension();
+                $mainImage->move(public_path('images'), $mainImageName);
+
+                $category->main_image = $mainImageName;
+            }
+            // dd($category);
+
+            // Update background image if a new file is uploaded
+            if ($request->hasFile('bg_image')) {
+                // Delete the old background image
+                $oldBgImagePath = public_path('images/' . $category->bgimage);
+                if (File::exists($oldBgImagePath)) {
+                    File::delete($oldBgImagePath);
+                }
+
+                // Save the new background image
+                $bgImage = $request->file('bg_image');
+                $bgImageName = time() . '_bg.' . $bgImage->getClientOriginalExtension();
+                $bgImage->move(public_path('images'), $bgImageName);
+
+                $category->bgimage = $bgImageName;
+            }
+            // dd($category);   
+
+            // Update category details
+            $category->name = $request->category_name;
+            $category->save();
+
+            // Redirect with success message
+            return redirect()->route('category.index')
+                ->with('success', 'Category updated successfully.');
+        } catch (\Exception $e) {
+            // Handle unexpected errors
+            return back()->withErrors(['error' => 'An error occurred while updating the category. Please try again.']);
         }
-
-        $bg_image = public_path('image\\' . $category->bg_image);
-        if (File::exists($bg_image)) {
-            File::delete($bg_image);
-        }
-
-        $image = $request->file('main_image');
-        $name = time() . '.' . $image->getClientOriginalExtension();
-        $path = public_path('/images');
-        $image->move($path, $name);
-
-        $bg_image = $request->file('bg_image');
-        $bg_name = time() . '.' . $bg_image->getClientOriginalExtension();
-        $bg_path = public_path('/images');
-        $bg_image->move($bg_path, $bg_name);
-
-        $category->name = $request->category_name;
-        $category->main_image = $name;
-        $category->bgimage = $bg_name;
-        $category->save();
-
-        return redirect()->route('category.index')
-            ->with('success', 'Category updated successfully.');
     }
 
     /**
