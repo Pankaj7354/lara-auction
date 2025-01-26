@@ -98,7 +98,7 @@ class ProductsController extends Controller
     {
         $data = products::find($id);
         $category = Categories::all();
-        return view('admin.product', compact('data', 'category'));
+        return view('admin.productAdd', compact('data', 'category'));
     }
 
     /**
@@ -168,6 +168,7 @@ class ProductsController extends Controller
             $product->product_bid_start = $request->product_bid_start;
             $product->product_bid_end = $request->product_bid_end;
             $product->save();
+            return redirect()->route('product.index')->with('success', 'Product updated successfully.');
         } catch (\Exception $e) {
             // Handle any unexpected errors
             return redirect()->route('product.index')->with('error', 'An error occurred while updating the product.');

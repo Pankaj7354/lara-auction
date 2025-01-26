@@ -56,7 +56,7 @@
         @endforeach
       </tbody>
     </table>
-  </div>
+  </div>  
 
   <!-- Add Product Modal -->
   <div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="addProductModalLabel" aria-hidden="true">
@@ -68,12 +68,12 @@
         </div>
         <div class="modal-body">
           <form id="addProductForm" method="POST" 
-          action="{{isset($data) ? route('product.update', $data->id ) : route('product.store')}}"
+          action="{{ route('product.store')}}"
           enctype="multipart/form-data" >
             @csrf
-            @if(isset($data))
+            {{-- @if(isset($data))
                     @method('PUT')
-                  @endif
+                  @endif --}}
 
             <div class="mb-3">
               <label for="productName" class="form-label">Product Name</label>
@@ -143,35 +143,7 @@
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
   </script>
-  {{-- <script>
-    document.getElementById("addProductForm").addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      const productName = document.getElementById("productName").value;
-      const productCategory = document.getElementById("productCategory").value;
-      const productPrice = document.getElementById("productPrice").value;
-
-      const productTableBody = document.getElementById("productTableBody");
-
-      const newRow = document.createElement("tr");
-      newRow.innerHTML = `
-        <td>${productTableBody.children.length + 1}</td>
-        <td>${productName}</td>
-        <td>${productCategory}</td>
-        <td>${productPrice}</td>
-        <td>
-          <button class="btn btn-sm btn-danger">Delete</button>
-        </td>
-      `;
-
-      productTableBody.appendChild(newRow);
-
-      // Reset form and close modal
-      e.target.reset();
-      const modal = bootstrap.Modal.getInstance(document.getElementById("addProductModal"));
-      modal.hide();
-    });
-  </script> --}}
+ 
 
 </main>
 @endsection
