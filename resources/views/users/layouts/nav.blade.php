@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Sbidu - Bid And Auction HTML Template</title>
+    <title>@yield('title')</title>
 
     <link rel="stylesheet" href="{{asset('auction/assets/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('auction/assets/css/all.min.css')}}">
@@ -91,7 +91,7 @@
                     </div>
                     <ul class="menu ml-auto">
                         <li>
-                            <a href="#0">Home</a>
+                            <a href="{{route('users.index')}}">Home</a>
                             <ul class="submenu">
                                 <li>
                                     <a href="index.html">Home Page One</a>
@@ -111,7 +111,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="product.html">Auction</a>
+                            <a href="#">Auction</a>
                         </li>
                         <li>
                             <a href="#0">Pages</a>
@@ -142,7 +142,7 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="#0">Dashboard</a>
+                                    <a href="#">Dashboard</a>
                                     <ul class="submenu">
                                         <li>
                                             <a href="dashboard.html">Dashboard</a>
