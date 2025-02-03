@@ -23,6 +23,9 @@
 
     <link rel="shortcut icon" href="{{asset('auction/assets/images/favicon.png')}}"
      type="image/x-icon">
+
+     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/luxon/3.0.1/luxon.min.js"></script>
 </head>
 
 <body>

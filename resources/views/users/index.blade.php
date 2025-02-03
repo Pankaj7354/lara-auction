@@ -119,13 +119,50 @@
                                  </div>
                              </div>
                              <div class="countdown-area">
-                                 <div class="countdown">
-                                     <div id="bid_counter26"></div>
-                                 </div>
+                                <div class="countdown">
+                                    <div id="bid_counter"></div>
+                                    <script>
+                                        function startBidCountdown(startTime, endTime, elementId) {
+                                            const counter = document.getElementById(elementId);
+                                    
+                                            function updateCountdown() {
+                                                const now = new Date().getTime();
+                                                const remainingTime = endTime - now;
+                                    
+                                                if (remainingTime <= 0) {
+                                                    counter.innerHTML = "Bid Ended";
+                                                    clearInterval(interval);
+                                                    return;
+                                                }
+                                    
+                                                const hours = Math.floor((remainingTime / (1000 * 60 * 60)) % 24);
+                                                const minutes = Math.floor((remainingTime / (1000 * 60)) % 60);
+                                                const seconds = Math.floor((remainingTime / 1000) % 60);
+                                    
+                                                counter.innerHTML = `${hours}h ${minutes}m ${seconds}s`;
+                                            }
+                                    
+                                            // Start the countdown
+                                            updateCountdown();
+                                            const interval = setInterval(updateCountdown, 1000);
+                                        }
+// $product->product_bid_start = \Carbon\Carbon::parse($product->product_bid_start)->toIso8601String();
+// $product->product_bid_end = \Carbon\Carbon::parse($product->product_bid_end)->toIso8601String();
+
+                                    
+                                        // Get Blade values and pass to JavaScript
+                                        const product_bid_start = new Date("{{ $products->product_bid_start }}").getTime();
+                                        const product_bid_end = new Date("{{ $products->product_bid_end }}").getTime();
+                                    
+                                        startBidCountdown(product_bid_start, product_bid_end, "bid_counter");
+                                    </script>
+                                </div>
+                                
+                               
                                  <span class="total-bids">30 Bids</span>
                              </div>
                              <div class="text-center">
-                                 <a href="{{route('users.product',$products->id)}}" class="custom-button">Submit a bid</a>
+                                 <a href="{{route('users.product',$products->id)}}" class="custom-button">View Product's</a>
                              </div>
                          </div>
                      </div>

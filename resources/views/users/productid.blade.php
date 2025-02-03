@@ -16,7 +16,8 @@
                     <a href="#0">Pages</a>
                 </li>
                 <li>
-                    <span>{{$data[0]->name}}</span>
+                    
+                    <span></span>
                 </li>
             </ul>
         </div>
@@ -38,16 +39,16 @@
                     <div class="auction-item-2" data-aos="zoom-out-up" data-aos-duration="1000">
 
                         <div class="auction-thumb">
-                            <a href="{{route('users.WithCategoriesId',$item->id)}}">
+                            <a href="{{route('users.product',$item->id)}}">
                                 <img src="{{asset('product_images/'.$item->product_image)}}" 
                                 alt="car"></a>
-                            <a href="{{route('users.WithCategoriesId',$item->id)}}" class="rating"><i class="far fa-star"></i></a>
-                            <a href="{{route('users.WithCategoriesId',$item->id)}}" class="bid"><i class="flaticon-auction"></i></a>
+                            <a href="{{route('users.product',$item->id)}}" class="rating"><i class="far fa-star"></i></a>
+                            <a href="{{route('users.product',$item->id)}}" class="bid"><i class="flaticon-auction"></i></a>
                                 
                         </div>
                         <div class="auction-content">
                             <h6 class="title">
-                                <a href="{{route('users.WithCategoriesId',$item->id)}}">
+                                <a href="{{route('users.product',$item->id)}}">
                                     {{$item->product_name}}</a>
                             </h6>
                             <div class="bid-area">
@@ -77,7 +78,7 @@
                                 <span class="total-bids">30 Bids</span>
                             </div>
                             <div class="text-center">
-                                <a href="" class="custom-button">Submit a bid</a>
+                                <a href="{{route('users.product',$item->id)}}" class="custom-button">Product Details</a>
                             </div>
                         </div>
                     </div>
@@ -131,14 +132,14 @@
                     <div class="auction-item-2" data-aos="zoom-out-up" data-aos-duration="1000">
                         <div class="auction-thumb">
 
-                            <a href="{{route('users.WithCategoriesId',$item->id)}}">
+                            <a href="{{route('users.product',$item->id)}}">
                                 <img src="{{asset('product_images/'.$item->product_image)}}" alt="product"></a>
-                            <a href="{{route('users.WithCategoriesId',$item->id)}}" class="rating"><i class="far fa-star"></i></a>
-                            <a href="{{route('users.WithCategoriesId',$item->id)}}" class="bid"><i class="flaticon-auction"></i></a>
+                            <a href="{{route('users.product',$item->id)}}" class="rating"><i class="far fa-star"></i></a>
+                            <a href="{{route('users.product',$item->id)}}" class="bid"><i class="flaticon-auction"></i></a>
                         </div>
                         <div class="auction-content">
                             <h6 class="title">
-                                <a href="{{route('users.WithCategoriesId',$item->id)}}">{{$item->product_name}}</a>
+                                <a href="{{route('users.product',$item->id)}}">{{$item->product_name}}</a>
                             </h6>
                             <div class="bid-area">
                                 <div class="bid-amount">
@@ -167,7 +168,7 @@
                                 <span class="total-bids">30 Bids</span>
                             </div>
                             <div class="text-center">
-                                <a href="#0" class="custom-button">Submit a bid</a>
+                                <a href="{{route('users.product',$item->id)}}" class="custom-button">Submit a bid</a>
                             </div>
                         </div>
                     </div>

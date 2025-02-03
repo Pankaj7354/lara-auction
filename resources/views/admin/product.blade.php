@@ -9,6 +9,10 @@
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
     rel="stylesheet"
   />
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
   <div class="container mt-5">
@@ -19,43 +23,82 @@
       </button>
     </div>
 
-    <table class="table table-striped">
+    <table id="productTable" class="table table-striped">
       <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Product Name</th>
-          <th scope="col">product Price</th>
-          <th scope="col">product_image</th>
-          <th scope="col">Category-Id </th>
-          <th scope="col">product_bid_start</th>
-          <th scope="col">product_bid_end</th>
-          <th scope="col">Actions</th>
-        </tr>
+          <tr>
+              <th scope="col">#</th>
+              <th scope="col">Product Name</th>
+              <th scope="col">Product Price</th>
+              <th scope="col">Product Image</th>
+              <th scope="col">Category-Id</th>
+              <th scope="col">Bid Start</th>
+              <th scope="col">Bid End</th>
+              <th scope="col">Actions</th>
+          </tr>
       </thead>
-      <tbody id="productTableBody">
-        <!-- Product rows will be added dynamically here -->
-        @foreach ($data as $product)
-        <tr>
-          <td>{{ $loop->iteration }}</td>
-          <td>{{ $product->product_name }}</td>
-          <td>{{ $product->product_price }}</td>
-          <td><img src="{{ asset('product_images/'.$product->product_image) }}" alt="product_image" style="width: 100px; height: 100px;"></td>
-          
-          <td>{{ $product->category_name }}</td>
-          <td>{{date('d-m-Y H:i A', strtotime($product->product_bid_start)) }}</td>
-          <td>{{ date('d-m-Y H:i A', strtotime($product->product_bid_end)) }}</td>
-          <td>
-            <a href="{{ route('product.edit', $product->id) }}" class="btn btn-sm btn-primary">Edit</a>
-            <form action="{{ route('product.destroy', $product->id) }}" method="POST" style="display: inline-block">
-              @csrf
-              @method('DELETE')
-              <button type="submit" class="btn btn-sm btn-danger">Delete</button>
-            </form>
-          </td>
-        </tr>
-        @endforeach
+      <tbody>
+          @foreach ($data as $product)
+          <tr id="row-{{ $product->id }}">
+              <td>{{ $loop->iteration }}</td>
+              <td>{{ $product->product_name }}</td>
+              <td>{{ $product->product_price }}</td>
+              <td>
+                  <img src="{{ asset('product_images/'.$product->product_image) }}" alt="product_image" style="width: 100px; height: 100px;">
+              </td>
+              <td>{{ $product->category_name }}</td>
+              <td>{{ date('d-m-Y H:i A', strtotime($product->product_bid_start)) }}</td>
+              <td>{{ date('d-m-Y H:i A', strtotime($product->product_bid_end)) }}</td>
+              <td>
+                  <a href="{{ route('product.edit', $product->id) }}" class="btn btn-sm btn-primary">Edit</a>
+                  <button class="btn btn-sm btn-danger delete-product" data-id="{{ $product->id }}">Delete</button>
+              </td>
+          </tr>
+          @endforeach
       </tbody>
-    </table>
+  </table>
+  
+  <script>
+  $(document).ready(function() {
+      // Initialize DataTables
+      $('#productTable').DataTable();
+  
+      // Handle delete action with SweetAlert
+      $('.delete-product').click(function() {
+          var productId = $(this).data('id');
+          var row = $('#row-' + productId);
+  
+          Swal.fire({
+              title: "Are you sure?",
+              text: "You won’t be able to revert this!",
+              icon: "warning",
+              showCancelButton: true,
+              confirmButtonColor: "#d33",
+              cancelButtonColor: "#3085d6",
+              confirmButtonText: "Yes, delete it!"
+          }).then((result) => {
+              if (result.isConfirmed) {
+                  $.ajax({
+                      url: "{{ route('product.destroy', '') }}/" + productId,
+                      type: "POST",
+                      data: {
+                          _method: "DELETE",
+                          _token: "{{ csrf_token() }}"
+                      },
+                      success: function(response) {
+                          Swal.fire("Deleted!", "The product has been deleted.", "success");
+                          row.fadeOut(500, function() {
+                              $(this).remove();
+                          });
+                      },
+                      error: function() {
+                          Swal.fire("Error!", "Something went wrong.", "error");
+                      }
+                  });
+              }
+          });
+      });
+  });
+  </script>
   </div>  
 
   <!-- Add Product Modal -->

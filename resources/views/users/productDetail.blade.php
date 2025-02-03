@@ -14,7 +14,7 @@
                 <a href="#0">Pages</a>
             </li>
             <li>
-                <span>{{$data->category_id}}</span>
+                <span>{{$data->category_name}}</span>
             </li>
         </ul>
     </div>
@@ -125,13 +125,18 @@
                         </li>
                     </ul>
                     <div class="product-bid-area">
-                        <form class="product-bid-form">
                             <div class="search-icon">
                                 <img src="{{asset('auction/assets/images/product/search-icon.png')}}" alt="product">
                             </div>
-                            <input type="text" placeholder="Enter you bid amount">
-                            <button type="submit" class="custom-button">Submit a bid</button>
-                        </form>
+                            <a href="{{ route('users.productbid', $data->id) }}">
+                                @if(now()->greaterThanOrEqualTo(\Carbon\Carbon::parse($data->product_bid_end)))
+                                    <button class="custom-button" disabled>Bidding Ended</button>
+                                @elseif(now()->greaterThanOrEqualTo(\Carbon\Carbon::parse($data->product_bid_start)))
+                                    <button class="custom-button">Submit a bid</button>
+                                @else
+                                    <button class="custom-button" disabled>Waiting for bid start</button>
+                                @endif
+                            </a>
                     </div>
                     <div class="buy-now-area">
                         <a href="#0" class="custom-button">Buy Now: {{$data->product_price}}</a>

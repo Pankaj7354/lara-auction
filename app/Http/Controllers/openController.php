@@ -27,9 +27,21 @@ class openController extends Controller
     }
     public function productdetail($id)
     {
+        $categories = DB::table('categories')->get();
+
         $product = products::join('categories', 'products.category_id', '=', 'categories.id')
             ->select('products.*', 'categories.name as category_name')
             ->findorfail($id);
-        return view('users.productdetail', ['data' => $product]);
+
+        return view('users.productdetail', ['data' => $product, 'categorydata' => $categories]);
+    }
+    public function show($id)
+    {
+        $product = products::join('categories', 'products.category_id', '=', 'categories.id')
+            ->select('products.*', 'categories.name as category_name')
+            ->findorfail($id);
+
+
+        return view('users.product-bid', ['data' => $product]);
     }
 }

@@ -5,5 +5,6 @@
 @yield('user_deshbord')
 @yield('productid')
 @yield('productDetail')
+@yield('Bid')
 
 @include('users.layouts.footer')
