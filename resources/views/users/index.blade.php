@@ -121,7 +121,7 @@
                              <div class="countdown-area">
                                 <div class="countdown">
                                     <div id="bid_counter"></div>
-                                    <script>
+                                    {{-- <script>
                                         function startBidCountdown(startTime, endTime, elementId) {
                                             const counter = document.getElementById(elementId);
                                     
@@ -155,7 +155,7 @@
                                         const product_bid_end = new Date("{{ $products->product_bid_end }}").getTime();
                                     
                                         startBidCountdown(product_bid_start, product_bid_end, "bid_counter");
-                                    </script>
+                                    </script> --}}
                                 </div>
                                 
                                

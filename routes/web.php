@@ -5,6 +5,8 @@ use App\Http\Controllers\AuthSystemController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\{openController, ProductBidController};
 
+
+Route::view('call', 'pusher');
 // openController is the controller that we created in the previous step to handle the open routes.
 Route::get('/', [openController::class, 'index'])->name('users.index');
 Route::get('WithCategoriesId/{id}', [openController::class, 'WithCategoriesId'])->name('users.WithCategoriesId');

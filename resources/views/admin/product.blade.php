@@ -160,20 +160,60 @@
                 <div class="text-danger">{{ $message }}</div> 
               @enderror
             </div>
-            <div class="mb-3">
-              <label for="bidStart" class="form-label">Bid Start</label>
-              <input type="datetime-local" value="{{old('product_bid_start')}}" class="form-control" name="product_bid_start"  />
-              @error('product_bid_start')
-                <div class="text-danger">{{ $message }}</div>
-              @enderror
-            </div>
-            <div class="mb-3">
-              <label for="bidEnd" class="form-label">Bid End</label>
-              <input type="datetime-local" value="{{old('product_bid_end')}}" class="form-control" name="product_bid_end" />
-              @error('product_bid_end')
-                <div class="text-danger">{{ $message }}</div>
-              @enderror
-            </div>
+<div class="mb-3">
+  <label for="bidStart" class="form-label">Bid Start</label>
+  <input type="datetime-local" id="bidStart" value="{{ old('product_bid_start') }}" class="form-control" name="product_bid_start" required />
+  @error('product_bid_start')
+    <div class="text-danger">{{ $message }}</div>
+  @enderror
+</div>
+
+<div class="mb-3">
+  <label for="bidEnd" class="form-label">Bid End</label>
+  <input type="datetime-local" id="bidEnd" value="{{ old('product_bid_end') }}" class="form-control" name="product_bid_end" required />
+  @error('product_bid_end')
+    <div class="text-danger">{{ $message }}</div>
+  @enderror
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    let now = new Date();
+    now.setMinutes(now.getMinutes() - now.getTimezoneOffset()); // Adjust timezone differences
+    let minDateTime = now.toISOString().slice(0, 16); // Format YYYY-MM-DDTHH:MM
+
+    let bidStart = document.getElementById("bidStart");
+    let bidEnd = document.getElementById("bidEnd");
+
+    bidStart.setAttribute("min", minDateTime);
+    bidEnd.setAttribute("min", minDateTime);
+
+    function adjustTimeToBusinessHours(date) {
+      let hour = date.getHours();
+      if (hour < 9) {
+        date.setHours(9, 0, 0, 0); // Set to 9:00 AM
+      } else if (hour > 21) {
+        date.setDate(date.getDate() + 1); // Move to next day
+        date.setHours(9, 0, 0, 0); // Start at 9:00 AM
+      }
+      return date;
+    }
+
+    bidStart.addEventListener("change", function () {
+      let selectedDate = new Date(this.value);
+      selectedDate = adjustTimeToBusinessHours(selectedDate);
+
+      let minEndDate = new Date(selectedDate);
+      minEndDate.setMinutes(selectedDate.getMinutes() + 30); // At least 30 min later
+
+      let formattedMinEnd = minEndDate.toISOString().slice(0, 16);
+      bidEnd.setAttribute("min", formattedMinEnd);
+      bidEnd.value = formattedMinEnd; // Auto-set Bid End
+    });
+  });
+</script>
+
+
             
 
             <button type="submit" class="btn btn-primary">Add Product</button>

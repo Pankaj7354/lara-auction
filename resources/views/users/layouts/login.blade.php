@@ -1,5 +1,6 @@
 
 @extends('users.layouts.main')
+@section('title','Login')
 @section('login')
 
     <main>
