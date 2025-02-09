@@ -14,6 +14,7 @@ Route::get('product/{id}', [openController::class, 'productdetail'])->name('user
 
 // after enter click submit bid button then it will go to productbid page
 Route::get('productbid/{id}', [openController::class, 'show'])->name('users.productbid');
+Route::match(['get', 'post'], 'productbid/{id}', [ProductBidController::class, 'placeBid'])->middleware('auth')->name('users.productbid');
 
 
 
@@ -24,12 +25,12 @@ Route::group(['middleware' => 'guest'], function () {
 });
 Route::group(['middleware' => 'auth'], function () {
     Route::match(['get', 'post'], 'Deshbord', [AuthSystemController::class, 'Deshbord'])->name('admin_deshbord');
-    Route::get('logout', [AuthSystemController::class, 'logout']);
+    Route::get('logout', [AuthSystemController::class, 'logout'])->name('logout');
 });
 Route::group(['prefix' => 'admin'], function () {
     Route::group(['middleware' => 'auth'], function () {
         Route::match(['get', 'post'], 'Userdeshbord', [AuthSystemController::class, 'Userdeshbord'])->name('user_deshbord');
-        Route::get('logout', [AuthSystemController::class, 'logout']);
+        Route::get('logout', [AuthSystemController::class, 'logout'])->name('logout');
     });
 });
 // Route::view('Userdeshbord', 'users.user_deshbord');

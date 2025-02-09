@@ -1,6 +1,35 @@
 @extends('users.layouts.main')
 @section('content')
+
 <main>
+
+
+
+  
+<!-- Owl Carousel CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+<!-- jQuery (Required) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Owl Carousel JS -->
+{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script>
+  $(document).ready(function(){
+    $(".browse-slider").owlCarousel({
+      items: 5,   // Number of items per slide
+      loop: true, // Infinite loop
+      margin: 1, // Space between slides
+      //nav: true,  // Show navigation arrows
+     // dots: true, // Show pagination dots
+      autoplay: true,
+      autoplayTimeout: 3000,
+      autoplayHoverPause: true
+    });
+  });
+  
+</script> --}}
     
     <!--============= Banner Section Starts Here =============-->
     <section class="banner-section bg_img" data-background="{{asset('auction/assets/images/banner/banner-bg-1.png')}}">

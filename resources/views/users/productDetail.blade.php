@@ -22,7 +22,6 @@
 </div>
 <!--============= Hero Section Ends Here =============-->
 
-
 <!--============= Product Details Section Starts Here =============-->
 <section class="product-details padding-bottom mt--240 mt-lg--440">
     <div class="container">
@@ -30,34 +29,10 @@
             <div class="product-details-slider owl-theme owl-carousel" id="sync1">
                 <div class="slide-top-item">
                     <div class="slide-inner">
-                        <img src="{{asset('product_images/'.$data->product_image)}}" alt="product">
+                        <img src="{{asset('product_images/'. $data->product_image)}}" alt="product">
                     </div>
                 </div>
-                <div class="slide-top-item">
-                    <div class="slide-inner">
-                        <img src="{{asset('auction/assets/images/product/product2.png')}}" alt="product">
-                    </div>
-                </div>
-                <div class="slide-top-item">
-                    <div class="slide-inner">
-                        <img src="{{asset('auction/assets/images/product/product3.png')}}" alt="product">
-                    </div>
-                </div>
-                <div class="slide-top-item">
-                    <div class="slide-inner">
-                        <img src="{{asset('auction/assets/images/product/product4.png')}}" alt="product">
-                    </div>
-                </div>
-                <div class="slide-top-item">
-                    <div class="slide-inner">
-                        <img src="{{asset('auction/assets/images/product/product5.png')}}" alt="product">
-                    </div>
-                </div>
-                <div class="slide-top-item">
-                    <div class="slide-inner">
-                        <img src="{{asset('auction/assets/images/product/product6.png')}}" alt="product">
-                    </div>
-                </div>
+                
             </div>
         </div>
         <div class="product-details-slider-wrapper">
@@ -113,7 +88,7 @@
                     <ul class="price-table mb-30">
                         <li class="header">
                             <h5 class="current">Current Price</h5>
-                            <h3 class="price">INR{{$data->product_price}}</h3>
+                            <h3 class="price">US ${{$data->product_price}}</h3>
                         </li>
                         <li>
                             <span class="details">Buyer's Premium</span>
@@ -125,18 +100,18 @@
                         </li>
                     </ul>
                     <div class="product-bid-area">
-                            <div class="search-icon">
-                                <img src="{{asset('auction/assets/images/product/search-icon.png')}}" alt="product">
-                            </div>
-                            <a href="{{ route('users.productbid', $data->id) }}">
-                                @if(now()->greaterThanOrEqualTo(\Carbon\Carbon::parse($data->product_bid_end)))
-                                    <button class="custom-button" disabled>Bidding Ended</button>
-                                @elseif(now()->greaterThanOrEqualTo(\Carbon\Carbon::parse($data->product_bid_start)))
-                                    <button class="custom-button">Submit a bid</button>
-                                @else
-                                    <button class="custom-button" disabled>Waiting for bid start</button>
-                                @endif
-                            </a>
+                        <div class="search-icon">
+                            <img src="{{asset('auction/assets/images/product/search-icon.png')}}" alt="product">
+                        </div>
+                        <a href="{{ route('users.productbid', $data->id) }}">
+                            @if(now()->greaterThanOrEqualTo(\Carbon\Carbon::parse($data->product_bid_end)))
+                                <button class="custom-button" disabled>Bidding Ended</button>
+                            @elseif(now()->greaterThanOrEqualTo(\Carbon\Carbon::parse($data->product_bid_start)))
+                                <button class="custom-button">Submit a bid</button>
+                            @else
+                                <button class="custom-button" disabled>Waiting for bid start</button>
+                            @endif
+                        </a>
                     </div>
                     <div class="buy-now-area">
                         <a href="#0" class="custom-button">Buy Now: {{$data->product_price}}</a>
@@ -246,7 +221,7 @@
             <div class="tab-pane fade show active" id="details">
                 <div class="tab-details-content">
                     <div class="header-area">
-                        <h3 class="title">{{$data->product_name}}</h3>
+                        <h3 class="title">2012 Ford Escape Hybrid (Brooklyn, NY 11214)</h3>
                         <div class="item">
                             <table class="product-info-table">
                                 <tbody>
