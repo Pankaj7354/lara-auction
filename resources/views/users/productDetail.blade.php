@@ -8,7 +8,7 @@
     <div class="container">
         <ul class="breadcrumb">
             <li>
-                <a href="index.html">Home</a>
+                <a href="{{route('users.index')}}">Home</a>
             </li>
             <li>
                 <a href="#0">Pages</a>
@@ -103,7 +103,7 @@
                         <div class="search-icon">
                             <img src="{{asset('auction/assets/images/product/search-icon.png')}}" alt="product">
                         </div>
-                        <a href="{{ route('users.productbid', $data->id) }}">
+                        <a href="{{ route('LiveBid', $data->id) }}">
                             @if(now()->greaterThanOrEqualTo(\Carbon\Carbon::parse($data->product_bid_end)))
                                 <button class="custom-button" disabled>Bidding Ended</button>
                             @elseif(now()->greaterThanOrEqualTo(\Carbon\Carbon::parse($data->product_bid_start)))

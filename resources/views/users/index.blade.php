@@ -107,7 +107,7 @@
                          <p>We offer affordable Vehicles</p>
                      </div>
                  </div>
-                 <a href="{{route('users.product',$category->id)}}" class="normal-button">View All</a>
+                 <a href="{{route('users.WithCategoriesId',['id' => $category->id])}}" class="normal-button">View All</a>
              </div>
              <div class="row justify-content-center mb-30-none">
                  @php
@@ -119,9 +119,12 @@
                      <div class="auction-item-2" data-aos="zoom-out-up" data-aos-duration="2200">
                          <div class="auction-thumb">
                              <a href="{{route('users.product',$products->id)}}">
-                                 <img src="{{asset('product_images/'.$products->product_image)}}" alt="car"></a>
-                             <a href="{{route('users.product',$products->id)}}" class="rating"><i class="far fa-star"></i></a>
-                             <a href="{{route('users.product',$products->id)}}" class="bid"><i class="flaticon-auction"></i></a>
+                                 <img src="{{asset('product_images/'.$products->product_image)}}"
+                                  alt="car"></a>
+                             <a href="{{route('users.product',$products->id)}}" class="rating">
+                                <i class="far fa-star"></i></a>
+                             <a href="{{route('users.product',$products->id)}}" class="bid">
+                                <i class="flaticon-auction"></i></a>
                          </div>
                          <div class="auction-content">
                              <h6 class="title">

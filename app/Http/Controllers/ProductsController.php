@@ -44,7 +44,7 @@ class ProductsController extends Controller
             'product_name' => 'required|string|max:50',
             'product_price' => 'required|numeric',
             'product_image' => 'required|image|mimes:jpeg,png,jpg,gif',
-            // 'product_sub_image.*' => 'image|mimes:jpeg,png,jpg,gif', // Sub-images validation
+            'product_sub_image.*' => 'image|mimes:jpeg,png,jpg,gif', // Sub-images validation
             'category_id' => 'required|numeric', // Ensures category exists
             'product_bid_start' => 'required|date',
             'product_bid_end' => 'required|date|after:product_bid_start',
@@ -58,21 +58,21 @@ class ProductsController extends Controller
         $image->move(public_path('/product_images'), $imageName);
 
         // Handle multiple sub-images
-        // $subImageNames = [];
-        // if ($request->hasFile('product_sub_image')) {
-        //     foreach ($request->file('product_sub_image') as $index => $subImage) {
-        //         $subImageName = time() . "_sub_{$index}." . $subImage->getClientOriginalExtension();
-        //         $subImage->move(public_path('/product_images'), $subImageName);
-        //         $subImageNames[] = $subImageName;
-        //     }
-        // }
+        $subImageNames = [];
+        if ($request->hasFile('product_sub_image')) {
+            foreach ($request->file('product_sub_image') as $index => $subImage) {
+                $subImageName = time() . "_sub_{$index}." . $subImage->getClientOriginalExtension();
+                $subImage->move(public_path('/product_images'), $subImageName);
+                $subImageNames[] = $subImageName;
+            }
+        }
 
         // Save product data
         $product = new products();
         $product->product_name = $request->product_name;
         $product->product_price = $request->product_price;
         $product->product_image = $imageName;
-        // $product->product_sub_image = json_encode($subImageNames); // Save sub-images as JSON
+        $product->product_sub_image = json_encode($subImageNames); // Save sub-images as JSON
         $product->category_id = $request->category_id;
         $product->product_bid_start = $request->product_bid_start;
         $product->product_bid_end = $request->product_bid_end;
@@ -110,7 +110,7 @@ class ProductsController extends Controller
             'product_name' => 'required|string|max:50',
             'product_price' => 'required|numeric',
             'product_image' => 'image|mimes:jpeg,png,jpg,gif',
-            // 'product_sub_image.*' => 'image|mimes:jpeg,png,jpg,gif', // Sub-images validation
+            'product_sub_image.*' => 'image|mimes:jpeg,png,jpg,gif', // Sub-images validation
             'category_id' => 'required|numeric', // Ensures category exists
             'product_bid_start' => 'required|date',
             'product_bid_end' => 'required|date|after:product_bid_start',
@@ -137,28 +137,28 @@ class ProductsController extends Controller
             // dd($product);
 
             // Update sub-images if new files are uploaded
-            // if ($request->hasFile('product_sub_image')) {
-            //     // Delete the old sub-images
-            //     $oldSubImages = json_decode($product->product_sub_image, true); // Decode JSON to an array
-            //     if (is_array($oldSubImages)) {
-            //         foreach ($oldSubImages as $subImage) {
-            //             $subImagePath = public_path('product_images/' . $subImage);
-            //             if (File::exists($subImagePath)) {
-            //                 File::delete($subImagePath);
-            //             }
-            //         }
-            //     }
+            if ($request->hasFile('product_sub_image')) {
+                // Delete the old sub-images
+                $oldSubImages = json_decode($product->product_sub_image, true); // Decode JSON to an array
+                if (is_array($oldSubImages)) {
+                    foreach ($oldSubImages as $subImage) {
+                        $subImagePath = public_path('product_images/' . $subImage);
+                        if (File::exists($subImagePath)) {
+                            File::delete($subImagePath);
+                        }
+                    }
+                }
 
-            //     // Save the new sub-images
-            //     $subImageNames = [];
-            //     foreach ($request->file('product_sub_image') as $index => $subImage) {
-            //         $subImageName = time() . "_sub_{$index}." . $subImage->getClientOriginalExtension();
-            //         $subImage->move(public_path('/product_images'), $subImageName);
-            //         $subImageNames[] = $subImageName;
-            //     }
+                // Save the new sub-images
+                $subImageNames = [];
+                foreach ($request->file('product_sub_image') as $index => $subImage) {
+                    $subImageName = time() . "_sub_{$index}." . $subImage->getClientOriginalExtension();
+                    $subImage->move(public_path('/product_images'), $subImageName);
+                    $subImageNames[] = $subImageName;
+                }
 
-            //     $product->product_sub_image = json_encode($subImageNames); // Save sub-images as JSON
-            // }
+                $product->product_sub_image = json_encode($subImageNames); // Save sub-images as JSON
+            }
             // dd($product);
 
             // Update other product data
@@ -191,17 +191,17 @@ class ProductsController extends Controller
             }
 
             // // If sub-images are stored as JSON or array, delete them too
-            // if (!empty($product->product_sub_image)) {
-            //     $productSubImages = json_decode($product->product_sub_image, true); // Decode JSON to an array
-            //     if (is_array($productSubImages)) {
-            //         foreach ($productSubImages as $subImage) {
-            //             $subImagePath = public_path('product_images/' . $subImage);
-            //             if (File::exists($subImagePath)) {
-            //                 File::delete($subImagePath);
-            //             }
-            //         }
-            //     }
-            // }
+            if (!empty($product->product_sub_image)) {
+                $productSubImages = json_decode($product->product_sub_image, true); // Decode JSON to an array
+                if (is_array($productSubImages)) {
+                    foreach ($productSubImages as $subImage) {
+                        $subImagePath = public_path('product_images/' . $subImage);
+                        if (File::exists($subImagePath)) {
+                            File::delete($subImagePath);
+                        }
+                    }
+                }
+            }
 
             // Delete the product from the database
             $product->delete();

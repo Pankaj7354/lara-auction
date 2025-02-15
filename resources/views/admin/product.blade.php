@@ -30,7 +30,8 @@
               <th scope="col">Product Name</th>
               <th scope="col">Product Price</th>
               <th scope="col">Product Image</th>
-              <th scope="col">Category-Id</th>
+              <th scope="col">Product Sub Images</th>
+              <th scope="col">Category ID</th>
               <th scope="col">Bid Start</th>
               <th scope="col">Bid End</th>
               <th scope="col">Actions</th>
@@ -43,11 +44,27 @@
               <td>{{ $product->product_name }}</td>
               <td>{{ $product->product_price }}</td>
               <td>
-                  <img src="{{ asset('product_images/'.$product->product_image) }}" alt="product_image" style="width: 100px; height: 100px;">
+                  <img src="{{ asset('product_images/'.$product->product_image) }}" 
+                       alt="product_image" 
+                       style="width: 100px; height: 100px; object-fit: cover;">
               </td>
-              <td>{{ $product->category_name }}</td>
-              <td>{{ date('d-m-Y H:i A', strtotime($product->product_bid_start)) }}</td>
-              <td>{{ date('d-m-Y H:i A', strtotime($product->product_bid_end)) }}</td>
+              <td>
+                  @php
+                      $subImages = json_decode($product->product_sub_image, true);
+                  @endphp
+                  @if (!empty($subImages) && is_array($subImages))  
+                      @foreach ($subImages as $image)
+                          <img src="{{ asset('product_images/'.$image) }}" 
+                               alt="sub_image" 
+                               style="width: 50px; height: 50px; object-fit: cover; margin: 2px;">
+                      @endforeach
+                  @else
+                      <span>No sub images</span>
+                  @endif
+              </td>
+              <td>{{ $product->category_id }}</td>
+              <td>{{ \Carbon\Carbon::parse($product->product_bid_start)->format('d-m-Y H:i A') }}</td>
+              <td>{{ \Carbon\Carbon::parse($product->product_bid_end)->format('d-m-Y H:i A') }}</td>
               <td>
                   <a href="{{ route('product.edit', $product->id) }}" class="btn btn-sm btn-primary">Edit</a>
                   <button class="btn btn-sm btn-danger delete-product" data-id="{{ $product->id }}">Delete</button>
@@ -56,6 +73,7 @@
           @endforeach
       </tbody>
   </table>
+  
   
   <script>
   $(document).ready(function() {
@@ -139,13 +157,13 @@
                 <div class="text-danger">{{ $message }}</div>
               @enderror
             </div>
-            {{-- <div class="mb-3">
+            <div class="mb-3">
               <label for="productSubImages" class="form-label">Product Multipal Images</label>
               <input type="file" class="form-control" name="product_sub_image[]" accept="image/*" multiple />
               @error('product_sub_image')
                 <div class="text-danger">{{ $message }}</div>
               @enderror
-            </div> --}}
+            </div>
             <div class="mb-3">
               <label for="productCategory" class="form-label">Category</label>
               <select class="form-select"  name="category_id" >

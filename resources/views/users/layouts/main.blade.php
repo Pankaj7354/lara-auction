@@ -133,33 +133,24 @@
                                 </li>
                                 @if(Auth::check())  
                                 <li>
-                                    <a href="{{ route('user_deshbord') }}">Dashboard</a>
+                                    @if(Auth::user()->role == 'admin')  
+                                        <a href="{{ route('admin_deshbord') }}">Admin Dashboard</a>
+                                    @else
+                                        <a href="{{ route('user_deshbord') }}">User Dashboard</a>
+                                    @endif
+                            
                                     <ul class="submenu">
-                                        <li>
-                                            <a href="dashboard.html">Dashboard</a>
-                                        </li>
-                                        <li>
-                                            <a href="profile.html">Personal Profile</a>
-                                        </li>
-                                        <li>
-                                            <a href="my-bid.html">My Bids</a>
-                                        </li>
-                                        <li>
-                                            <a href="winning-bids.html">Winning Bids</a>
-                                        </li>
-                                        <li>
-                                            <a href="notifications.html">My Alert</a>
-                                        </li>
-                                        <li>
-                                            <a href="my-favorites.html">My Favorites</a>
-                                        </li>
-                                        <li>
-                                            <a href="referral.html">Referrals</a>
-                                        </li>
+                                        <li><a href="{{route('admin_deshbord')}}">Dashboard</a></li>
+                                        <li><a href="profile.html">Personal Profile</a></li>
+                                        <li><a href="my-bid.html">My Bids</a></li>
+                                        <li><a href="winning-bids.html">Winning Bids</a></li>
+                                        <li><a href="notifications.html">My Alert</a></li>
+                                        <li><a href="my-favorites.html">My Favorites</a></li>
+                                        <li><a href="referral.html">Referrals</a></li>
                                     </ul>
                                 </li>
-                                @endif
-
+                            @endif
+                            
 
                             </ul>
                         </li>

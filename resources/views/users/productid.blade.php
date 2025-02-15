@@ -10,7 +10,7 @@
         <div class="container">
             <ul class="breadcrumb">
                 <li>
-                    <a href="index.html">Home</a>
+                    <a href="{{route('users.index')}}">Home</a>
                 </li>
                 <li>
                     <a href="#0">Pages</a>
@@ -42,8 +42,10 @@
                             <a href="{{route('users.product',$item->id)}}">
                                 <img src="{{asset('product_images/'.$item->product_image)}}" 
                                 alt="car"></a>
-                            <a href="{{route('users.product',$item->id)}}" class="rating"><i class="far fa-star"></i></a>
-                            <a href="{{route('users.product',$item->id)}}" class="bid"><i class="flaticon-auction"></i></a>
+                            <a href="{{route('users.product',$item->id)}}" class="rating">
+                                <i class="far fa-star"></i></a>
+                            <a href="{{route('users.product',$item->id)}}" class="bid">
+                                <i class="flaticon-auction"></i></a>
                                 
                         </div>
                         <div class="auction-content">
@@ -78,7 +80,8 @@
                                 <span class="total-bids">30 Bids</span>
                             </div>
                             <div class="text-center">
-                                <a href="{{route('users.product',$item->id)}}" class="custom-button">Product Details</a>
+                                <a href="{{route('users.product',$item->id)}}" 
+                                    class="custom-button">Product Details</a>
                             </div>
                         </div>
                     </div>
